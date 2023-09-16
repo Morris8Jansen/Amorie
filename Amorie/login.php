@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 
-<!-- inline styles nog veranderen in html -->
+<!-- inline sstyles nog veranderen in html -->
 <!DOCTYPE html>
 <html>
 <head>
