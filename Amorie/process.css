@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn {
+  margin-top: 1rem;
+}
+
+/* .logout-btn {
+  text-align: right;
+  margin-top: 1rem;
+} */
+
+/* Voeg deze regels toe aan je CSS-bestand */
+.logout-btn {
+  text-align: center;
+  margin-top: 2rem; /* Pas de bovenmarge aan zoals gewenst */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Pas de hoogte aan zoals gewenst */
+  width: 150px; /* Pas de breedte aan zoals gewenst */
+  background-color: #0047AB; /* Kies de gewenste achtergrondkleur */
+  color: #fff; /* Kies de gewenste tekstkleur */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.logout-btn:hover {
+  background-color: #002a70; /* Kies een andere kleur voor hover-effect */
+}

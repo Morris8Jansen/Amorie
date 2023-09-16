@@ -1,0 +1,19 @@
+{
+  "name": "build-your-own-webshop-03be0454-147f54ef",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitlab.bit-academy.nl:b007d9e5-a137-4edf-91f9-940633239f49/ab579953-06f8-4c0b-b3bf-6ad0ba7d1d3c/Build-your-own-webshop-03be0454-147f54ef.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mollie/api-client": "^3.7.0",
+    "express": "^4.18.2"
+  }
+}
