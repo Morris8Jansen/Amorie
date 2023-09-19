@@ -177,7 +177,7 @@
     <li><a class="dropdown-item" href="enkelbandjes.html">Enkelbandjes</a></li>
     <li><a class="dropdown-item" href="oorbellen.html">Oorbellen</a></li>
     <li><a class="dropdown-item" href="ringen.html">Ringen</a></li>
-    <li><a class="dropdown-item" href="kettingen.html">Kettingen</a></li>
+    <li><a class="dropdown-item no-border" href="kettingen.html">Kettingen</a></li>
   </ul>
 </li>
 

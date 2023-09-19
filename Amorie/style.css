@@ -99,6 +99,47 @@
 }
 
 
+/* dropdown menu in navbar */
+.dropdown-menu {
+  display: none;
+}
+
+/* Toon het dropdown-menu wanneer over sieraden wordt gehoverd */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  background-color: #0047AB;
+  color: #86B3F4;
+  padding: 10px;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #86B3F4;
+  color: #0047AB;
+}
+
+.navbar .dropdown-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  border-bottom: 1px solid black;
+}
+
+.navbar .dropdown-menu .dropdown-item.no-border {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+
 /* alert */
 
 div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text-center {
@@ -235,13 +276,4 @@ footer a:hover {
 }
 
 
-/* Verberg het dropdown-menu standaard */
-.dropdown-menu {
-  display: none;
-}
-
-/* Toon het dropdown-menu wanneer de bovenliggende <li> wordt gehoverd */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-}
 
