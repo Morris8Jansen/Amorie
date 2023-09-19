@@ -137,9 +137,6 @@
 
 
 
-
-
-
 /* alert */
 
 div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text-center {
@@ -200,48 +197,67 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
 
 /* .products-preview-section */
 
+.products-preview-section .container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-.products-preview-section .col-6 {
+.products-preview-section .row {
+  display: flex;
+  justify-content: center;
+}
+
+.products-preview-section .col-12,
+.products-preview-section .col-sm-4,
+.products-preview-section .col-md-3,
+.products-preview-section .col-lg-2 {
   text-align: center;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  margin: 3px;
+  display: inline-block;
 }
 
-
-.products-preview-section img {
+.products-preview-section .product-item img {
   max-width: 100%;
   height: auto;
-  display: block; 
+  display: block;
   margin: 0 auto;
 }
 
-.products-preview-section .row {
-  overflow-x: auto; 
-  white-space: nowrap; 
-  margin-bottom: 20px;
-}
-
-.products-preview-section p {
-  margin: 5px 0; 
+.products-preview-section .product-item p {
+  margin: 5px 0;
 }
 
 
-/* Style voor product items */
-.product-item {
-  text-align: center;
+.products-preview-section .show-more-button:hover {
+  background-color: #86B3F4;
 }
 
-/* zorgen dat de op kleine schermen de producten in het midden komen */
 @media (max-width: 767px) {
-  .product-item {
+  .products-preview-section .col-12,
+  .products-preview-section .col-sm-4,
+  .products-preview-section .col-md-3,
+  .products-preview-section .col-lg-2 {
     text-align: center;
     margin: 0 auto;
+    width: calc(100% - 20px);
+    display: block;
   }
 }
 
 
 /* Style for the "Show More" button */
+.products-preview-section .show-more-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 .show-more-button {
   background-color: #0047AB;
   color: white;
@@ -255,6 +271,35 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
 
 .show-more-button:hover {
   background-color: #86B3F4;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* welkom bij amorie sectie */
+
+.welkom-bij-button {
+  background-color: #0047AB;
+  color: white;
+  border: none;
+  padding: 15px 30px; 
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  text-decoration: none; 
+}
+
+.welkom-bij-button:hover {
+  background-color: #86B3F4;
+  text-decoration: none;
 }
 
 

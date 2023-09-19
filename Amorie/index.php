@@ -56,9 +56,7 @@
 
             <a class="nav-item" href="sieraden.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Sieraden</h5>
-            </a>
-            <!-- Voeg de volgende code toe aan je navigatiebalk -->
-          
+            </a>          
 
 
 
@@ -91,8 +89,9 @@
     <!-- aan de rechterkant groot scherm logo links -->
     <div class="d-none d-lg-flex align-items-center">
       <a href="" class="logo-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-hearts" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z"/>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-suit-heart" viewBox="0 0 16 16">
+  <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
 </svg>
       </a>
 
@@ -301,61 +300,46 @@
 
 <!-- product preview -->
 <!-- hier wil ik nog een mooi hover effect opzetten van mensen die de sieraden aanhebben als je hoverd -->
-  <section class="products-preview-section">
-
+<section class="products-preview-section">
   <div class="container-fluid">
-    <div class="row d-flex justify-content-center">
-
-
-    <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2 m-3">
+    <div class="row">
+      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
         <img src="images/preview-product-1.webp" alt="preview-product-1">
         <p>Ring Venice</p>
         <p>34,95€</p>
       </div>
-
-
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2 m-3">
+      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
         <img src="images/preview-product-2.jpg" alt="preview-product-1">
         <p>Ring Paris</p>
         <p>29,95€</p>
       </div>
-      
-
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2 m-3">
+      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
         <img src="images/preview-product-3.jpg" alt="preview-product-1">
         <p>Ring Florence</p>
         <p>29,95€</p>
       </div>
-
-
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2 m-3">
+      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
         <img src="images/preview-product-4.jpg" alt="preview-product-1">
         <p>Ring Catalunya</p>
         <p>29,95€</p>
       </div>
-
-
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2 m-3">
+      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
         <img src="images/preview-product-5.jpg" alt="preview-product-1">
         <p>Ring Sydney</p>
         <p>24,95€</p>
       </div>
-
-
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2 m-3">
+      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
         <img src="images/preview-product-6.jpg" alt="preview-product-1">
         <p>Ring Madrid</p>
         <p>24,95€</p>
       </div>
-
     </div>
-
-  <div class="d-flex justify-content-center mb-5 show-more-button-container">
-  <button class="show-more-button">Show more</button>
-  </div>
-
+    <div class="show-more-button-container">
+      <button class="show-more-button">Show more</button>
+    </div>
   </div>
 </section>
+
 
 
 <section class="naamloos">
@@ -368,8 +352,8 @@
     <div class="col-md-4">
       <div class="text-center">
         <h2>Welkom bij Amorie</h2>
-        <p>shop nu een van onze mooie collecties</p>
-        <a href="#" class="btn btn-primary">Knop</a>
+        <p class="my-5">shop nu een van onze mooie collecties</p>
+        <a href="#" class="welkom-bij-button my-5">bekijk collecties</a>
       </div>
     </div>
     <div class="col-md-8">
@@ -378,6 +362,46 @@
     </div>
   </div>
 </div>
+
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <!-- zou wel de tekst in de foto moeten veranderen naar amorie -->
+      <img src="images/welkom-bij-lotsofjewelz.jpg" alt="welkom bij Amorie" class="img-fluid">
+    </div>
+    <div class="col-md-4">
+      <div class="text-center">
+        <h2>Welkom bij Amorie</h2>
+        <p class="my-5">shop nu een van onze mooie collecties</p>
+        <a href="#" class="welkom-bij-button my-5">bekijk collecties</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="text-center">
+        <h2>Welkom bij Amorie</h2>
+        <p class="my-5">shop nu een van onze mooie collecties</p>
+        <a href="#" class="welkom-bij-button my-5">bekijk collecties</a>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- zou wel de tekst in de foto moeten veranderen naar amorie -->
+      <img src="images/welkom-bij-lotsofjewelz.jpg" alt="welkom bij Amorie" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 <!-- 
