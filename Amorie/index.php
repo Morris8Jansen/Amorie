@@ -29,7 +29,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand d-flex justify-content-center" href="#">
-        <img class="navbar-logo" src="./images/amorie-logo-doorzichtige-achtergrond.jpg" alt="logo">
+        <img class="navbar-logo" src="./images/amorie-logo.png" alt="logo">
       </a>
       <div class="offcanvas offcanvas-start d-flex" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
@@ -46,21 +46,39 @@
             <a class="nav-item" href="index.html">
               <h5 class="my-2 h4 nav-link active" aria-current="page" style="color: #0047AB;">Home</h5>
             </a>
+
+
             <a class="nav-item" href="new.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Nieuw</h5>
             </a>
+
+
+
             <a class="nav-item" href="sieraden.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Sieraden</h5>
             </a>
+            <!-- Voeg de volgende code toe aan je navigatiebalk -->
+          
+
+
+
+
+
             <a class="nav-item" href="accessoires.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Accesoires</h5>
             </a>
+
+
             <a class="nav-item" href="cadeauwinkel.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Cadeauwinkel</h5>
             </a>
+
+
             <a class="nav-item" href="collecties.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Collecties</h5>
             </a>
+
+            
             <a class="nav-item" href="persoonlijk.html">
               <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Persoonlijk</h5>
             </a>
@@ -144,9 +162,27 @@
             <li class="nav-item">
               <a class="nav-link" href="new.html">Nieuw</a>
             </li>
-            <li class="nav-item">
+
+
+            <!-- <li class="nav-item">
               <a class="nav-link" href="sieraden.html">Sieraden</a>
-            </li>
+            </li> -->
+            <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="sieradenDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Sieraden
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="sieradenDropdown">
+    <li><a class="dropdown-item" href="sieraden.html">Alle Sieraden</a></li>
+    <li><a class="dropdown-item" href="armbanden.html">Armbanden</a></li>
+    <li><a class="dropdown-item" href="enkelbandjes.html">Enkelbandjes</a></li>
+    <li><a class="dropdown-item" href="oorbellen.html">Oorbellen</a></li>
+    <li><a class="dropdown-item" href="ringen.html">Ringen</a></li>
+    <li><a class="dropdown-item" href="kettingen.html">Kettingen</a></li>
+  </ul>
+</li>
+
+
+
             <li class="nav-item">
               <a class="nav-link" href="accessoires.html">Accesoires</a>
             </li>
@@ -264,6 +300,7 @@
   </section>
 
 <!-- product preview -->
+<!-- hier wil ik nog een mooi hover effect opzetten van mensen die de sieraden aanhebben als je hoverd -->
   <section class="products-preview-section">
 
   <div class="container-fluid">
@@ -319,6 +356,42 @@
 
   </div>
 </section>
+
+
+<section class="naamloos">
+
+
+<!-- welkom bij Amorie -->
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="text-center">
+        <h2>Welkom bij Amorie</h2>
+        <p>shop nu een van onze mooie collecties</p>
+        <a href="#" class="btn btn-primary">Knop</a>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- zou wel de tekst in de foto moeten veranderen naar amorie -->
+      <img src="images/welkom-bij-lotsofjewelz.jpg" alt="welkom bij Amorie" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+er onder misschien een zelfde vak maken met een carousel van alle collecties -->
+
+
+
+<!-- 
+ook wil ik hier nog een zelfde vak met een plek waar je je e-mail kan achterlaten -->
+
+
+<!-- dan nog een klein vakje met stuur ons gerust een e-mail als je een vraag hebt of iets dergelijks -->
+</section>
+
 
 
 
@@ -437,8 +510,20 @@
 
 
 
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="script.js"></script>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

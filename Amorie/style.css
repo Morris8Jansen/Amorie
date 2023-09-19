@@ -235,4 +235,13 @@ footer a:hover {
 }
 
 
+/* Verberg het dropdown-menu standaard */
+.dropdown-menu {
+  display: none;
+}
+
+/* Toon het dropdown-menu wanneer de bovenliggende <li> wordt gehoverd */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
