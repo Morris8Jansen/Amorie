@@ -44,7 +44,38 @@
   fill: #86B3F4;
 }
 
+/* zoekbalk in de navbar */
 
+/* random stijlen even hier geparkeerd, gaat vooral om de navbars  */
+/* Mediaquery voor schermen met een maximale breedte van 768px (typisch voor kleine schermen) */
+
+
+
+
+
+
+
+
+
+/* CSS-styling voor de zoekbalk */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-input {
+  border: none;
+  flex: 1;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
 
@@ -370,18 +401,57 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
   background-color: #0047AB;
   color: white;
   border: none;
-  padding: 15px 30px; 
+  padding: 15px 30px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 20px;
   transition: background-color 0.3s ease;
-  text-decoration: none; 
+  text-decoration: none;
+  margin-top: 15px;
 }
 
 .welkom-bij-button:hover {
   background-color: #86B3F4;
   text-decoration: none;
 }
+
+
+
+/* carousel sectie */
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.carousel-item img {
+  max-height: 100%;
+  max-width: 60%;
+}
+
+.carousel-text {
+  max-width: 45%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+
 
 
 /* footer */

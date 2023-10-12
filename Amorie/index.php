@@ -19,11 +19,50 @@
     <p class="text-center">vandaag voor 5 uur besteld morgen in huis! (alleen op werkdagen binnen nederland)</p>
   </nav>
 
-  <!-- eerste navbar en hamburger -->
+
+  <!-- dit is de werkende navbar met verkeerde order -->
 
   <nav class="navbar bg-body-tertiary navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
+<!-- dit is een probeersel kan ik eventueel gewoon verwijderen -->
+
+<div class="mobile-navbar">
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand d-flex justify-content-center" href="#">
+      <img class="navbar-logo" src="./images/amorie-logo.png" alt="logo">
+    </a>
+    <!-- Voeg hier de iconen voor mobiel in -->
+  </div>
+
+
+
+
+<!-- zoekbalk -->
+
+<div class="container-zoekbalk">
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <form class="d-flex">
+        <div class="input-group">
+          <input class="form-control" type="search" placeholder="Zoek..." aria-label="Zoeken">
+          <button class="btn" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- eerste navbar en hamburger -->
+    
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -84,7 +123,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    
 
     <!-- aan de rechterkant groot scherm logo links -->
     <div class="d-none d-lg-flex align-items-center">
@@ -109,7 +148,6 @@
       </a>
     </div>
 
-    </div>
 
 
     <!-- klein scherm logo links rechtsboven op het scherm -->
@@ -135,6 +173,10 @@
 
     </div>
   </nav>
+
+
+
+<!-- dit is de onderkant van de navbar die ik wil targeten -->
 
 
 
@@ -200,19 +242,18 @@
           </form>
         </div>
       </div>
-    </div>
   </nav>
-
+  
 
   
 <!-- alert -->
 
 
 
-<div class="alert alert-primary custom-alert alert-dismissible fade show text-white text-center" role="alert">
-  gratis verzending vanaf €15
-  <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+  <!-- <div class="alert alert-primary custom-alert alert-dismissible fade show text-white text-center" role="alert">
+    gratis verzending vanaf €15
+    <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div> -->
 
 
 
@@ -394,6 +435,55 @@
 </div>
 
 
+<section class="carousel">
+  <!-- Dit is de carousel -->
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Afbeeldingen -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container carousel-text-container">
+          <div class="row">
+            <div class="col-md-5 order-2">
+              <h3>Ontdek onze: Tell me your name</h3>
+              <p class="p-3">Eén letter, oneindige betekenis. Deze verfijnde sieraden zijn perfect om jezelf of een geliefde te eren. Kies een enkele letter die voor jou belangrijk is en draag hem dicht bij je hart. Eenvoudig, elegant, en vol persoonlijke betekenis.
+              </p>
+              <a href="#" id="welkom-bij-button" class="welkom-bij-button">Bekijk collectie</a>
+            </div>
+            <div class="col-md-7 order-1">
+              <img src="images/carousel-collectie-1.jpg" alt="Collectie 1">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container carousel-text-container">
+          <div class="row">
+            <div class="col-md-4 order-2">
+              <h3>Ontdek onze: Year of Birth</h3>
+              <p class="p-3">Jouw leven, één jaar. 'Year of Birth' sieraden vangen je unieke verhaal in één jaartal. Draag je geboortejaar met trots als een tijdloos aandenken of geef het als betekenisvol cadeau.</p>
+              <a href="#" id="welkom-bij-button" class="welkom-bij-button">Bekijk collectie</a>
+            </div>
+            <div class="col-md-8 order-1">
+              <img src="images/carousel-collectie-2.webp" alt="Collectie 2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Voeg meer .carousel-item elementen toe voor extra afbeeldingen -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="container my-5">
   <div class="row">
@@ -412,22 +502,6 @@
 </div>
 
 
-
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="text-center">
-        <h2>Welkom bij Amorie</h2>
-        <p class="my-5">shop nu een van onze mooie collecties</p>
-        <a href="#" class="welkom-bij-button my-5">bekijk collecties</a>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <!-- zou wel de tekst in de foto moeten veranderen naar amorie -->
-      <img src="images/welkom-bij-lotsofjewelz.jpg" alt="welkom bij Amorie" class="img-fluid">
-    </div>
-  </div>
-</div>
 
 
 
