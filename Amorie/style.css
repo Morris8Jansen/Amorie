@@ -497,9 +497,48 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
 }
 
 
+/* hero sectie */
+
+.button-container {
+  height: 100px;
+  margin-bottom:  150px;
+}
 
 
 
+
+
+/* email input */
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.scheidings-lijn {
+  background-color: #c4d9f7;
+  margin-bottom: 35px;
+}
+
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+/* scheidingslijn */
+
+/* scheidingslijn */
+/* .scheidings-lijn {
+  border-right: 1px solid rgb(224, 224, 224);
+  border-left: 1px solid rgb(224, 224, 224);
+
+} */
 
 
 

@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amorie</title>
+  <title>Nieuw</title>
 </head>
-
 <body>
-
-  <!-- bovenste bar voor 'vandaag voor 5 uur besteld morgen in huis' -->
-
-  <nav class="navbar d-lg-block d-none d-flex sticky-top">
-    <p class="text-center">vandaag voor 5 uur besteld morgen in huis! (alleen op werkdagen binnen nederland)</p>
-  </nav>
-
+  
 
   <!-- dit is de werkende navbar met verkeerde order -->
 
@@ -93,7 +84,7 @@
 
 
               <a class="nav-item" href="accessoires.php">
-                <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Accesoires</h5>
+                <h5 class="my-2 h4 nav-link" style="color: #0047AB;">Accessoires</h5>
               </a>
 
 
@@ -255,393 +246,55 @@
         </div>
       </div>
   </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-
-  
-<!-- alert -->
-
-
-<div class="alert-container">
-  <div class="alert alert-primary custom-alert alert-dismissible fade show text-white text-center" role="alert">
-    gratis verzending vanaf €15
-    <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  </div>
-
-
-<!-- eerste foto -->
-<div class="container-fluid d-flex align-items-center justify-content-center">
-<img class="img-fluid img-1 align-content-center" src="./images/1.png" alt="sieraden">
-</div>
-
-  <!-- knoppen onder grote foto (grid banner items) -->
-  <section class="grid-banner-items">
-  <div class="container mt-5 mb-3">
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="grid-banner-item d-flex align-items-center">
-          <div class="grid-banner-item__text">
-            <h2>Nieuw</h2>
-          </div>
-          <div class="square-photo">
-          <img src="images/nieuw-grid-banner-item.png" alt="Nieuw" class="img-fluid"/>
-        </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="grid-banner-item d-flex align-items-center">
-          <div class="grid-banner-item__text">
-            <h2>Sieraden</h2>
-          </div>
-          <div class="square-photo">
-          <img src="images/sieraden-grid-banner-item.png" alt="Sieraden" class="img-fluid" />
-        </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="grid-banner-item d-flex align-items-center">
-          <div class="grid-banner-item__text">
-            <h2>Accesoires</h2>
-          </div>
-          <div class="square-photo">
-          <img src="images/accesoires-grid-banner-item.png" alt="Accesoires" class="img-fluid"/>
-        </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="grid-banner-item d-flex align-items-center">
-          <div class="grid-banner-item__text">
-            <h2>Cadeauwinkel</h2>
-          </div>
-          <div class="square-photo">
-          <img src="images/Cadeauwinkel-grid-banner-item.png" alt="Cadeaubon" class="img-fluid" />
-        </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="grid-banner-item d-flex align-items-center">
-          <div class="grid-banner-item__text">
-            <h2>Collecties</h2>
-          </div>
-          <div class="square-photo">
-          <img src="images/Collecties-grid-banner-item.png" alt="Collecties" class="img-fluid"/>
-        </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="grid-banner-item d-flex align-items-center">
-          <div class="grid-banner-item__text">
-            <h2>Persoonlijk</h2>
-          </div>
-          <div class="square-photo">
-          <img src="images/persoonlijk-grid-banner-item.png" alt="Persoonlijk" class="img-fluid" />
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </section>
-
-<!-- product preview -->
-<!-- hier wil ik nog een mooi hover effect opzetten van mensen die de sieraden aanhebben als je hoverd -->
-<section class="products-preview-section">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
-        <img src="images/preview-product-1.webp" alt="preview-product-1">
-        <p>Ring Venice</p>
-        <p>34,95€</p>
-        <div class="favoriet-button-container">
-          <div class="favoriet-icoon-cirkel">
-        <button class="favoriet-button"></button>
-          </div>
-        </div>
-      </div>
-      <div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
-  <img src="images/preview-product-2.jpg" alt="preview-product-1">
-  <p>Ring Paris</p>
-  <p>29,95€</p>
-  <div class="favoriet-button-container">
-    <div class="favoriet-icoon-cirkel">
-      <button class="favoriet-button"></button>
-    </div>
-  </div>
-</div>
-<div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
-  <img src="images/preview-product-3.jpg" alt="preview-product-1">
-  <p>Ring Florence</p>
-  <p>29,95€</p>
-  <div class="favoriet-button-container">
-    <div class="favoriet-icoon-cirkel">
-      <button class="favoriet-button"></button>
-    </div>
-  </div>
-</div>
-<div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
-  <img src="images/preview-product-4.jpg" alt="preview-product-1">
-  <p>Ring Catalunya</p>
-  <p>29,95€</p>
-  <div class="favoriet-button-container">
-    <div class="favoriet-icoon-cirkel">
-      <button class="favoriet-button"></button>
-    </div>
-  </div>
-</div>
-<div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
-  <img src="images/preview-product-5.jpg" alt="preview-product-1">
-  <p>Ring Sydney</p>
-  <p>24,95€</p>
-  <div class="favoriet-button-container">
-    <div class="favoriet-icoon-cirkel">
-      <button class="favoriet-button"></button>
-    </div>
-  </div>
-</div>
-<div class="product-item col-12 col-sm-4 col-md-3 col-lg-2">
-  <img src="images/preview-product-6.jpg" alt="preview-product-1">
-  <p>Ring Madrid</p>
-  <p>24,95€</p>
-  <div class="favoriet-button-container">
-    <div class="favoriet-icoon-cirkel">
-      <button class="favoriet-button"></button>
-    </div>
-  </div>
-    </div>
-    <div class="show-more-button-container">
-      <button class="show-more-button">Show more</button>
-      <button class="show-less-button">Show less</button>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="hero">
-
-
-<!-- welkom bij Amorie -->
-
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-4 my-5 my-auto">
-      <div class="text-center">
-        <h2>Welkom bij Amorie</h2>
-        <p class="my-5">shop nu een van onze mooie collecties</p>
-        <a href="#" class="welkom-bij-button my-5">bekijk collecties</a>
-      </div>
-    </div>
-    <div class="col-md-8 my-5">
-      <!-- zou wel de tekst in de foto moeten veranderen naar amorie -->
-      <img src="images/welkom-bij-lotsofjewelz.jpg" alt="welkom bij Amorie" class="img-fluid">
-    </div>
-  </div>
-</div>
-
-
-<section class="carousel">
-  <!-- Dit is de carousel -->
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Afbeeldingen -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container carousel-text-container">
-          <div class="row">
-            <div class="col-md-5 order-2 my-auto">
-              <h3>Ontdek onze: Tell me your name</h3>
-              <p class="p-3">Eén letter, oneindige betekenis. Deze verfijnde sieraden zijn perfect om jezelf of een geliefde te eren. Kies een enkele letter die voor jou belangrijk is en draag hem dicht bij je hart. Eenvoudig, elegant, en vol persoonlijke betekenis.
-              </p>
-              <a href="#" id="welkom-bij-button" class="welkom-bij-button">Bekijk collectie</a>
-            </div>
-            <div class="col-md-7 order-1">
-              <img src="images/carousel-collectie-1.jpg" alt="Collectie 1">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container carousel-text-container">
-          <div class="row">
-            <div class="col-md-4 order-2 my-auto">
-              <h3>Ontdek onze: Year of Birth</h3>
-              <p class="p-3">Jouw leven, één jaar. 'Year of Birth' sieraden vangen je unieke verhaal in één jaartal. Draag je geboortejaar met trots als een tijdloos aandenken of geef het als betekenisvol cadeau.</p>
-              <a href="#" id="welkom-bij-button" class="welkom-bij-button">Bekijk collectie</a>
-            </div>
-            <div class="col-md-8 order-1">
-              <img src="images/carousel-collectie-2.webp" alt="Collectie 2">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Voeg meer .carousel-item elementen toe voor extra afbeeldingen -->
-    </div>
-  </div>
-</section>`
-
-
-
-<!-- reviews -->
-
-
-<section class="reviews">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-6 position-relative scroll-item-left">
-        <div class="scroll-item">
-          <img src="./images/2.png" alt="" class="img-fluid mx-auto d-block">
-          <div class="button-container text-center">
-            <p>Hier moet een leuk textje komen van een review die iemand heeft achtergelaten</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6 position-relative scroll-item-right">
-        <div class="scroll-item">
-          <img src="./images/1.png" alt="" class="img-fluid mx-auto d-block">
-          <div class="button-container text-center">
-            <p>Hier moet een leuk textje komen van een review die iemand heeft achtergelaten</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- <section class="reviews">
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 position-relative">
-      <img src="./images/2.png" alt="" class="img-fluid mx-auto d-block">
-      <div class="button-container text-center"> 
-        <p>Hier moet een leuk textje komen van een review die iemand heeft achtergelaten</p>
-    </div>
-    </div>
-    <div class="col-12 col-lg-6 position-relative">
-      <img src="./images/1.png" alt="" class="img-fluid mx-auto d-block">
-      <div class="button-container text-center">
-      <p>Hier moet een leuk textje komen van een review die iemand heeft achtergelaten</p>
-      </div>
-    </div>
-  </div>
-</div>
-</section> -->
-
-
-<!-- <div class="container-left">
-  <img src="./images/2.png" alt="" class="img-fluid mx-auto d-block">
-  <div class="button-container text-center">
-    <p>Hier moet een leuk textje komen van een review die iemand heeft achtergelaten</p>
-  </div>
-</div>
-
-<div class="container-right">
-  <img src="./images/1.png" alt="" class="img-fluid mx-auto d-block">
-  <div class="button-container text-center">
-    <p>Hier moet een leuk textje komen van een review die iemand heeft achtergelaten</p>
-  </div>
-</div> -->
-
-
-
-
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 position-relative">
-      <img src="./images/2.png" alt="" class="img-fluid mx-auto d-block">
-      <div class="button-container text-center"> <!-- Voeg 'text-center' toe om de knop te centreren -->
-        <button href="#" class="hero-button show-more-button">Kijk naar accessoires</button>
-      </div>
-    </div>
-    <div class="col-12 col-lg-6 position-relative">
-      <img src="./images/1.png" alt="" class="img-fluid mx-auto d-block">
-      <div class="button-container text-center"> <!-- Voeg 'text-center' toe om de knop te centreren -->
-        <button href="#" class="hero-button show-more-button">Kijk naar sieraden</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<!-- email achterlaten -->
-
-
-<div class="container-fluid">
-
-<div class="row space-evenly">
-
-
-<div class="col-12 col-lg-3 email-form scheidings-lijn">
-        <h2 class=" d-block mx-auto m-4 text-center">Laat je e-mail hier achter</h2>
-
-        <!-- dit moet nog een goed textje worden weet niet wat chloe precies wilt hebben -->
-        <p class="text-center">laat je email achter om op de hoogte te blijven van de nieuwste items, kortingen en krijg ook nog 10% korting op je eerste bestelling!</p>
-        <form action="jouw-verwerkingspagina.php" method="POST">
-
-        <input class="d-block mx-auto m-3" type="text" name="naam" placeholder="Naam" required>
-        <input class="d-block mx-auto m-3" type="email" name="email" placeholder="E-mail" required>
-        <button class="d-block mx-auto m-4 show-more-button" type="submit">Aanmelden</button>
-        </form>
-    </div>
-
-
-
-<div class="col-12 col-lg-3 email-form scheidings-lijn">
-  <h2 class="d-block mx-auto m-4 text-center">stuur ons een email</h2>
-  <p class="text-center">stuur ons gerust een email als je zit met vragen</p>
-  <a href="" class="mx-auto d-block text-center">Amorie@outlook.com</a>
-  <!-- ook even kijken hoe ik de email ga aanpakken en een eventueel telefoonnummer -->
-</div>
-
-<div class="col-12 col-lg-3 email-form scheidings-lijn">
-<h2 class="d-block mx-auto m-4 text-center">wat zijn onze bezorgdiensten?</h2>
-<p class="text-center">we verzenden onze items met ... en dit duurt in nederland .. dagen </p>
-<!-- dit is een mogelijkheid maar wil hier misschien wat beters voor verzinnen moet ik nog even overna denken -->
-</div>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- 
-er onder misschien een zelfde vak maken met een carousel van alle collecties -->
-
-
-
-<!-- 
-ook wil ik hier nog een zelfde vak met een plek waar je je e-mail kan achterlaten -->
-
-
-<!-- dan nog een klein vakje met stuur ons gerust een e-mail als je een vraag hebt of iets dergelijks -->
-</section>
-
-
-
-
-
-
-
-
-
 <!-- footer -->
 <!-- eerste kolom footer -->
 <footer class="bg-dark text-white">

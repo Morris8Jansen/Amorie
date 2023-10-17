@@ -32,3 +32,32 @@ document.addEventListener("DOMContentLoaded", function () {
   showProducts(5);
   showLessButton.style.display = "none";
 });
+
+
+
+
+// dit is om de reviews te laten bewegen
+
+const scrollItemsLeft = document.querySelectorAll('.scroll-item-left');
+const scrollItemsRight = document.querySelectorAll('.scroll-item-right');
+
+window.addEventListener('scroll', () => {
+  scrollItemsLeft.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    if (itemTop <= window.innerHeight && itemTop >= -item.clientHeight) {
+      let scrollPercentage = 150 * (window.innerHeight - Math.abs(itemTop)) / window.innerHeight;
+      scrollPercentage = Math.min(100, scrollPercentage); // Beperk tot maximaal 100
+      item.style.transform = `translateX(${scrollPercentage - 100}%)`;
+    }
+  });
+
+  scrollItemsRight.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    if (itemTop <= window.innerHeight && itemTop >= -item.clientHeight) {
+      let scrollPercentage = 150 * (window.innerHeight - Math.abs(itemTop)) / window.innerHeight;
+      scrollPercentage = Math.min(100, scrollPercentage); // Beperk tot maximaal 100
+      item.style.transform = `translateX(${100 - scrollPercentage}%)`;
+    }
+  });
+});
+
