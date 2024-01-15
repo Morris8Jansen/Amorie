@@ -1,17 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<?php
+if (isset($_GET['cat'])) {
+    $cat = $_GET['cat'];
+    echo "<h1>" . ucfirst($cat) . "</h1>";
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Armbanden</title>
-</head>
-<body>
-  
+    // Voeg hier je querylogica in op basis van de geselecteerde categorie ($cat)
+    if ($cat == 'alle') {
+        $query = "SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam, prijs";
+    } elseif ($cat == 'zegel') {
+        $query = "SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegelring%' GROUP BY productnaam, prijs";
+    } elseif ($cat == 'onesize') {
+        $query = "SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' AND keuze_combinatie NOT LIKE '%maten%' GROUP BY productnaam, prijs";
+    } elseif ($cat == 'vintage') {
+        $query = "SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE prijs > '24' AND productnaam LIKE '%ring%' GROUP BY productnaam, prijs";
+    } else {
+        echo "<p>Dit is een foutmelding of een standaardcategorie.</p>";
+    }
 
-  <!-- dit is de werkende navbar met verkeerde order -->
+    // Voer de query uit en toon de resultaten
+    if (isset($query)) {
+        $dbHost = 'localhost';
+        $dbUser = 'morris_jansen';
+        $dbName = 'amorie_database';
+        $dbPass = 'Wasmachine1';
+
+        // Verbind met de database
+        $conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
+
+        // Controleer de verbinding
+        if (!$conn) {
+            die("Databaseverbinding is mislukt: " . mysqli_connect_error());
+        }
+
+        // Voer de query uit
+        $result = mysqli_query($conn, $query);
+
+        // Toon de resultaten in HTML
+        if ($result) {
+            $mergedProducts = [];
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                $productName = $row['productnaam'];
+
+                // Controleer op goud of zilver in de productnaam
+                if (stripos($productName, 'zilver') !== false) {
+                    $row['productnaam'] = str_ireplace('zilver', '', $productName);
+                    $row['availability'][] = "Zilver";
+                } elseif (stripos($productName, 'goud') !== false) {
+                    $row['productnaam'] = str_ireplace('goud', '', $productName);
+                    $row['availability'][] = "Goud";
+                } else {
+                    // Als er geen goud of zilver in de productnaam staat, controleer keuze_combinatie
+                    if (stripos($row['keuze_combinatie'], 'zilver') !== false) {
+                        $row['availability'][] = "Zilver";
+                    }
+
+                    if (stripos($row['keuze_combinatie'], 'goud') !== false) {
+                        $row['availability'][] = "Goud";
+                    }
+                }
+
+                $mergedProducts[$row['productnaam']][] = $row;
+            }
+
+            echo "<div class='row'>";
+            foreach ($mergedProducts as $productName => $productVariations) {
+                echo "<div class='col-md-3'>";
+                echo "<h3>" . $productName . "</h3>";
+
+                // Houd de prijzen bij om te voorkomen dat dezelfde prijs twee keer wordt weergegeven
+                $displayedPrices = [];
+
+                // Afbeelding toevoegen met aangepaste grootte
+                echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-1.webp' alt='Productafbeelding'>";
+
+                foreach ($productVariations as $variation) {
+                    if (isset($variation['availability'])) {
+                        echo "<p style='font-size: 14px;'>Beschikbaar in " . implode(" & ", $variation['availability']) . "</p>";
+                    }
+                }
+
+                // Prijzenlogica aan het einde van de code
+                foreach ($productVariations as $variation) {
+                    // Controleer of de prijs al is weergegeven
+                    if (!in_array($variation['prijs'], $displayedPrices)) {
+                        $displayedPrices[] = $variation['prijs'];
+                        echo "<p>Prijs: €" . $variation['prijs'] . "</p>";
+                    }
+                }
+
+                echo "</div>";
+            }
+
+            echo "</div>";
+        } else {
+            echo "Fout bij het uitvoeren van de query: " . mysqli_error($conn);
+        }
+
+        // Sluit de databaseverbinding
+        mysqli_close($conn);
+    }
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <nav class="navbar bg-body-tertiary navbar-expand-lg eerste-navbar fixed-top">
     <div class="container-fluid">
@@ -340,318 +495,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <?php
-  $dbHost = 'localhost';
-  $dbUser = 'morris_jansen';
-  $dbName = 'amorie_database';
-  $dbPass = 'Wasmachine1';
-
-  // Gebruik PDO voor veiligheid bij het verbinden met de database
-  try {
-      $pdoConnection = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-      $pdoConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch (PDOException $e) {
-      die("Databaseverbinding is mislukt: " . $e->getMessage());
-  }
-
-  // Standaardquery voor alle enkelbandjes met prepared statement voor veiligheid
-  $preparedQuery = "SELECT * FROM producten WHERE productnaam LIKE :searchTerm";
-  $statement = $pdoConnection->prepare($preparedQuery);
-  $searchTerm = '%armband%';
-  $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-  $statement->execute();
-
-  // Zorg ervoor dat alle resultaten op een veilige manier worden opgehaald
-  $armbandenResultaten = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-  // Logica voor het verwerken van armbanden
-  $processedArmbanden = [];
-  $mergedArmbanden = [];
-
-  foreach ($armbandenResultaten as $row) {
-      $row['availability'] = [];
-
-      $metalOptions = ['zilver', 'goud'];
-
-      foreach ($metalOptions as $metal) {
-          if (isset($row['keuze_combinatie']) && stripos($row['keuze_combinatie'], $metal) !== false) {
-              $row['availability'][$metal] = ucfirst($metal);
-          }
-      }
-
-      // Als er geen metaal in keuze_combinatie is, kijk naar de productnaam
-      if (empty($row['availability']) && !empty($row['productnaam'])) {
-          foreach ($metalOptions as $metal) {
-              if (stripos($row['productnaam'], $metal) !== false) {
-                  $row['availability'][$metal] = ucfirst($metal);
-              }
-          }
-      }
-
-      // Verwijder 'goud' en 'zilver' uit de productnaam (hoofdletterongevoelig)
-      $row['productnaam'] = preg_replace("/\b(goud|zilver)\b/i", '', $row['productnaam']);
-
-      // Voeg het verwerkte armband toe aan de array
-      $processedArmbanden[] = $row;
-  }
-
-  // Voorkom dubbelen door armbanden samen te voegen
-  foreach ($processedArmbanden as $armband) {
-      $productNameWithoutMetal = $armband['productnaam'];
-
-      foreach ($processedArmbanden as $otherArmband) {
-          if ($armband !== $otherArmband && $productNameWithoutMetal === $otherArmband['productnaam']) {
-              $armband['availability'] = array_merge($armband['availability'], $otherArmband['availability']);
-          }
-      }
-
-      // Voeg het samengevoegde armband toe aan de array
-      $mergedArmbanden[$productNameWithoutMetal] = $armband;
-  }
-
-  // Toon de resultaten in HTML
-  echo "<div class='container-fluid'>";
-  echo "<div class='row justify-content-around'>";
-
-  // Gebruik htmlspecialchars voor veiligheid
-  foreach ($mergedArmbanden as $mergedArmband) {
-      echo "<div class='col-md-3 col-lg-2 product-item mb-4'>";
-      echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-1.webp' alt='Productafbeelding'>";
-      echo "<h3>" . htmlspecialchars($mergedArmband['productnaam']) . "</h3>";
-      echo "<p>Prijs: €" . htmlspecialchars($mergedArmband['prijs']) . "</p>";
-
-      if (!empty($mergedArmband['availability'])) {
-          echo "<p>Beschikbaar in " . implode(" & ", array_map('htmlspecialchars', $mergedArmband['availability'])) . "</p>";
-      }
-
-      echo "<div class='favoriet-button-container'>";
-      echo "<div class='favoriet-icoon-cirkel'>";
-      echo "<button class='favoriet-button'></button>";
-      echo "</div>";
-      echo "</div>";
-
-      echo "</div>";
-  }
-
-  echo "</div>";
-  echo "</div>";
-
-  // Sluit de databaseverbinding
-  $pdoConnection = null;
-    ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-<!-- footer -->
-<!-- eerste kolom footer -->
-<footer class="bg-dark text-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mt-4">
-        <h5>Hulp & Info</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-white">Verzendkosten</a></li>
-          <li><a href="#" class="text-white">Levertijd</a></li>
-          <li><a href="#" class="text-white">Retourneren & Ruilen</a></li>
-          <li><a href="#" class="text-white">Veelgestelde Vragen</a></li>
-          <li><a href="#" class="text-white">Algemene Voorwaarden</a></li>
-          <li><a href="#" class="text-white">Over Ons</a></li>
-        </ul>
-      </div>
-
-
-
-      <!-- middelste kolom footer (volg ons op social media) -->
-      <div class="col-md-4 mt-4">
-  <h5>Volg Ons Op Social Media</h5>
-  <ul class="list-unstyled social-media-list">
-    <li class="my-3">
-      <a href="URL-naar-Facebook" target="_blank" class="text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-        </svg>
-        <span>Facebook</span>
-      </a>
-    </li>
-    <li class="mb-3">
-      <a href="URL-naar-Instagram" target="_blank" class="text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.510-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.780-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-        </svg>
-        <span>Instagram</span>
-      </a>
-    </li>
-    <li class="mb-3">
-      <a href="URL-naar-Pinterest" target="_blank" class="text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pinterest" viewBox="0 0 16 16">
-          <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
-        </svg>
-        <span>Pinterest</span>
-      </a>
-    </li>
-    <li class="mb-3">
-      <a href="URL-naar-Tiktok" target="_blank" class="text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
-          <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
-        </svg>
-        <span>Tiktok</span>
-      </a>
-    </li>
-  </ul>
-</div>
-
-      <!-- laatste kolom van de footer (veilig betalen) -->
-
-      <div class="col-md-4 mt-4">
-        <h5>Veilig betalen</h5>
-        <ul class="list-unstyled">
-          
-        
-        <li>
-          <a href="#">
-            <img src="images/ideal-logo.svg" alt="Ideal" class=".svg-icon img-fluid my-2" style="max-width: 40px;">
-            <span>ideal</span>
-          </a>
-        </li>
-          
-          
-          <li>
-            <a href="#">
-              <img src="images/mastercard-logo.svg" alt="Mastercard" class=".svg-icon img-fluid my-2" style="max-width: 60px;">
-              <span>mastercard</span>
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="#">
-          <img src="images/klarna-logo.svg" alt="Klarna" class=".svg-icon img-fluid my-2" style="max-width: 80px;">
-            <span>Klarna</span>
-            </a>
-          </li>
-          
-
-
-
-
-          <li>
-            <a href="#">
-              <img src="images/paypal-logo.svg" alt="Paypal" class=".svg-icon img-fluid my-2" style="max-width: 90px;">
-          <span>paypal</span>
-            </a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="container text-center mt-4">
-    <p>Amorie 2018-2023 | Website gemaakt door Morris</p>
-  </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="script.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-
-</body>
-</html>

@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Armbanden</title>
+  <title>Nieuw</title>
 </head>
 <body>
   
@@ -109,20 +109,20 @@
 
     <!-- aan de rechterkant groot scherm logo links -->
     <div class="d-none d-lg-flex align-items-center">
-      <a href="favorieten.php" class="logo-link">
+      <a href="" class="logo-link">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-suit-heart" viewBox="0 0 16 16">
   <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
 </svg>
       </a>
 
-      <a href="winkelwagen.php" class="logo-link">
+      <a href="" class="logo-link">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-bag" viewBox="0 0 16 16">
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
 </svg>
       </a>
 
-      <a href="account.php" class="logo-link">
+      <a href="" class="logo-link">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -134,19 +134,19 @@
 
     <!-- klein scherm logo links rechtsboven op het scherm -->
     <div class="d-flex align-items-center ms-auto d-lg-none sm-icons-container">
-      <a href="favorieten.php" class="sm-navbar-icons">
+      <a href="" class="sm-navbar-icons">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-suit-heart" viewBox="0 0 16 16">
   <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
 </svg>
       </a>
 
-      <a href="winkelwagen.php" class="sm-navbar-icons">
+      <a href="" class="sm-navbar-icons">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-bag" viewBox="0 0 16 16">
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
 </svg>
       </a>
 
-      <a href="account.php" class="sm-navbar-icons">
+      <a href="" class="sm-navbar-icons">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -195,7 +195,7 @@
           <h5 class="offcanvas-title mx-auto" id="offcanvasNavbarLabel">Amorie</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-
+        <!-- binnenkant hamburger -->
         <div class="offcanvas-body">
           <ul class="navbar-links">
             <!-- alle links -->
@@ -213,7 +213,7 @@
     <ul class="dropdown-menu">
       <li><a href=""class="dropdown-item dropdown-toggle rechts">Oorbellen</a>
       <ul class="dropdown-menu submenu oorbellen">
-        <li><a href="" class="dropdown-item">Alle oorbellen</a></li>
+        <li><a href="oorbellen.php" class="dropdown-item">Alle oorbellen</a></li>
         <li><a href="" class="dropdown-item">Hoops</a></li>
         <li><a href="" class="dropdown-item">Oorringen & hangers</a></li>
         <li><a href="" class="dropdown-item">Oorknopjes</a></li>
@@ -228,27 +228,24 @@
     </li>
       <li><a href=""class="dropdown-item dropdown-toggle rechts">Kettingen</a>
     <ul class="dropdown-menu submenu kettingen">
-      <li><a href="kettingen.php?cat=alle" class="dropdown-item">Alle kettingen</a></li>
-      <li><a href="kettingen.php?cat=meerdere-lagen" class="dropdown-item">Meerdere lagen</a></li>
+      <li><a href="" class="dropdown-item">Alle kettingen</a></li>
+      <li><a href="" class="dropdown-item">Meerdere lagen</a></li>
 
     </ul>
     </li>
 
 
+      <li><a href=""class="dropdown-item dropdown-toggle rechts">Ringen</a>
+        <ul class="dropdown-menu submenu ringen">
+          <li><a href=""class="dropdown-item">Alle ringen</a></li>
+          <li><a href=""class="dropdown-item">Zegelringen</a></li>
+          <li><a href=""class="dropdown-item">One size ringen</a>
+          <li><a href=""class="dropdown-item">Vintage look</a>
 
-    <li><a href="#" class="dropdown-item dropdown-toggle rechts">Ringen</a>
-    <ul class="dropdown-menu submenu ringen">
-      <li><a href="ringen.php?cat=alle" id="alle" class="dropdown-item">Alle ringen</a></li>
-      <li><a href="ringen.php?cat=zegel" id="zegel" class="dropdown-item">Zegelringen</a></li>
-      <li><a href="ringen.php?cat=onesize" id="onesize" class="dropdown-item">One size ringen</a></li>
-      <li><a href="ringen.php?cat=vintage" id="vintage" class="dropdown-item">Vintage look</a></li>
-    </ul>
-</li>
-
-
-
-    <li><a href="armbanden.php" class="dropdown-item">Armbanden</a></li>
-    <li><a href="enkelbandjes.php" class="dropdown-item">Enkelbandjes</a></li>
+        </ul>
+    </li>
+    <li><a href="" class="dropdown-item">Armbanden</a></li>
+    <li><a href="" class="dropdown-item">Enkelbandjes</a></li>
 
     </ul>
   </li>
@@ -338,158 +335,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <?php
-  $dbHost = 'localhost';
-  $dbUser = 'morris_jansen';
-  $dbName = 'amorie_database';
-  $dbPass = 'Wasmachine1';
-
-  // Gebruik PDO voor veiligheid bij het verbinden met de database
-  try {
-      $pdoConnection = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-      $pdoConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch (PDOException $e) {
-      die("Databaseverbinding is mislukt: " . $e->getMessage());
-  }
-
-  // Standaardquery voor alle enkelbandjes met prepared statement voor veiligheid
-  $preparedQuery = "SELECT * FROM producten WHERE productnaam LIKE :searchTerm";
-  $statement = $pdoConnection->prepare($preparedQuery);
-  $searchTerm = '%armband%';
-  $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-  $statement->execute();
-
-  // Zorg ervoor dat alle resultaten op een veilige manier worden opgehaald
-  $armbandenResultaten = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-  // Logica voor het verwerken van armbanden
-  $processedArmbanden = [];
-  $mergedArmbanden = [];
-
-  foreach ($armbandenResultaten as $row) {
-      $row['availability'] = [];
-
-      $metalOptions = ['zilver', 'goud'];
-
-      foreach ($metalOptions as $metal) {
-          if (isset($row['keuze_combinatie']) && stripos($row['keuze_combinatie'], $metal) !== false) {
-              $row['availability'][$metal] = ucfirst($metal);
-          }
-      }
-
-      // Als er geen metaal in keuze_combinatie is, kijk naar de productnaam
-      if (empty($row['availability']) && !empty($row['productnaam'])) {
-          foreach ($metalOptions as $metal) {
-              if (stripos($row['productnaam'], $metal) !== false) {
-                  $row['availability'][$metal] = ucfirst($metal);
-              }
-          }
-      }
-
-      // Verwijder 'goud' en 'zilver' uit de productnaam (hoofdletterongevoelig)
-      $row['productnaam'] = preg_replace("/\b(goud|zilver)\b/i", '', $row['productnaam']);
-
-      // Voeg het verwerkte armband toe aan de array
-      $processedArmbanden[] = $row;
-  }
-
-  // Voorkom dubbelen door armbanden samen te voegen
-  foreach ($processedArmbanden as $armband) {
-      $productNameWithoutMetal = $armband['productnaam'];
-
-      foreach ($processedArmbanden as $otherArmband) {
-          if ($armband !== $otherArmband && $productNameWithoutMetal === $otherArmband['productnaam']) {
-              $armband['availability'] = array_merge($armband['availability'], $otherArmband['availability']);
-          }
-      }
-
-      // Voeg het samengevoegde armband toe aan de array
-      $mergedArmbanden[$productNameWithoutMetal] = $armband;
-  }
-
-  // Toon de resultaten in HTML
-  echo "<div class='container-fluid'>";
-  echo "<div class='row justify-content-around'>";
-
-  // Gebruik htmlspecialchars voor veiligheid
-  foreach ($mergedArmbanden as $mergedArmband) {
-      echo "<div class='col-md-3 col-lg-2 product-item mb-4'>";
-      echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-1.webp' alt='Productafbeelding'>";
-      echo "<h3>" . htmlspecialchars($mergedArmband['productnaam']) . "</h3>";
-      echo "<p>Prijs: €" . htmlspecialchars($mergedArmband['prijs']) . "</p>";
-
-      if (!empty($mergedArmband['availability'])) {
-          echo "<p>Beschikbaar in " . implode(" & ", array_map('htmlspecialchars', $mergedArmband['availability'])) . "</p>";
-      }
-
-      echo "<div class='favoriet-button-container'>";
-      echo "<div class='favoriet-icoon-cirkel'>";
-      echo "<button class='favoriet-button'></button>";
-      echo "</div>";
-      echo "</div>";
-
-      echo "</div>";
-  }
-
-  echo "</div>";
-  echo "</div>";
-
-  // Sluit de databaseverbinding
-  $pdoConnection = null;
-    ?>
 
 
 
@@ -646,6 +491,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
 <script src="script.js"></script>
 
 

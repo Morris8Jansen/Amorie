@@ -1,0 +1,199 @@
+2023-11-20 15:47:36 - SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam, prijs
+2023-11-20 15:53:27 - SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam, prijs
+2023-11-21 10:00:21 - SELECT productnaam, GROUP_CONCAT(DISTINCT keuze_combinatie) AS keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam, prijs
+2023-11-22 11:05:46 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:06:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:10:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:10:07 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:10:07 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:10:07 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:10:22 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:12:32 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:24:35 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:24:35 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:24:35 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:24:35 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:25:24 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:26:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' AND prijs > 24
+2023-11-22 11:33:29 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' AND prijs > 24
+2023-11-22 11:33:30 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' AND prijs > 24
+2023-11-22 11:33:33 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:33:36 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-22 11:35:46 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-22 11:36:03 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:44:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:44:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:44:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:48:01 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 11:48:16 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:03:53 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:21:20 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:21:20 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:21:20 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:52:31 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:58:34 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:58:36 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:58:37 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:58:40 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 12:58:41 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:01:50 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:01:51 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:01:51 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:01:54 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:08:21 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:08:21 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:08:21 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:08:21 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:08:22 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:17:09 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:17:10 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:41:53 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:41:54 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:41:54 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:50:02 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:50:03 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:50:03 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:53:13 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:56:08 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 13:56:09 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 15:16:44 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 15:16:44 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 15:16:44 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 15:16:45 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-22 15:16:51 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-24 11:32:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-24 11:32:09 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE NOT keuze_combinatie LIKE '%maten%'
+2023-11-24 11:32:18 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:44:53 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:44:53 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:44:53 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:44:57 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:44:57 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:44:57 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:45:19 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:56:25 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:56:34 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 11:56:35 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:00:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:00:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:18:46 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:18:46 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:18:46 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:18:47 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:23:03 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:04 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:05 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:37 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:24:41 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:34:41 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:34:41 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:34:41 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:35:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:35:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:35:01 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:35:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:38:41 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:38:42 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:38:42 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:43:13 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:43:13 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:45:40 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:45:40 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:45:40 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-24 12:46:30 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-27 11:08:58 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-27 11:08:59 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-27 11:09:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-27 12:04:17 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 12:16:17 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 12:16:18 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 12:16:42 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 12:42:38 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 12:42:38 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 12:42:59 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 12:42:59 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 15:17:55 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 15:17:56 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 15:18:17 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 16:53:26 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-27 16:59:32 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 16:59:32 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 16:59:36 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 16:59:36 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 16:59:39 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 16:59:39 - SELECT productnaam, keuze_combinatie, prijs FROM producten
+2023-11-27 16:59:52 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE NOT keuze_combinatie LIKE '%maten%'
+2023-11-27 16:59:56 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-27 17:00:06 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE NOT keuze_combinatie LIKE '%maten%'
+2023-11-28 10:21:49 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-28 10:21:54 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%' AND prijs > 24
+2023-11-28 10:51:16 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%zegel%'
+2023-11-28 10:53:56 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%ZEGELRING%'
+2023-11-28 10:54:04 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%'
+2023-11-28 10:54:14 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-28 10:54:17 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%'
+2023-11-28 10:54:21 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%VINTAGE%'
+2023-11-28 11:12:09 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%VINTAGE%'
+2023-11-28 12:07:28 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%VINTAGE%'
+2023-11-28 12:15:00 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%VINTAGE%'
+2023-11-28 12:15:01 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%VINTAGE%'
+2023-11-28 12:15:14 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE productnaam LIKE '%ring%'
+2023-11-28 12:15:18 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%VINTAGE%'
+2023-11-28 12:15:28 - SELECT productnaam, keuze_combinatie, prijs FROM producten WHERE categorie LIKE '%ZEGELRING%'
+2023-11-28 12:18:30 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ZEGELRING%' GROUP BY productnaam
+2023-11-28 12:18:31 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ZEGELRING%' GROUP BY productnaam
+2023-11-28 12:31:15 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-11-28 14:57:15 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:37:20 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:42:17 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:47:27 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:47:32 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:51:49 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:51:49 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:51:49 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:51:49 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:54:20 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:54:21 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:55:22 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:55:23 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 12:55:23 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:08:58 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:09:00 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:09:02 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:09:02 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:09:02 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:27:54 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:27:55 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:37:16 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-01 13:37:18 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-05 09:58:42 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-05 09:58:45 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%ONE-SIZE%' GROUP BY productnaam
+2023-12-05 09:59:01 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-05 10:01:38 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-05 11:50:31 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 12:19:25 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 12:30:30 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 12:30:34 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 12:33:00 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 13:09:26 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 13:09:26 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 13:09:27 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 13:09:30 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 13:09:39 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 13:09:41 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 14:29:31 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 14:29:32 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 14:29:34 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 14:29:43 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 14:30:31 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE productnaam LIKE '%ring%' GROUP BY productnaam
+2023-12-06 14:30:54 - SELECT productnaam, keuze_combinatie, MIN(prijs) AS prijs FROM producten WHERE categorie LIKE '%VINTAGE%' GROUP BY productnaam

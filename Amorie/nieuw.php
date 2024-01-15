@@ -13,7 +13,7 @@
 
   <!-- dit is de werkende navbar met verkeerde order -->
 
-  <nav class="navbar bg-body-tertiary navbar-expand-lg sticky-top">
+  <nav class="navbar bg-body-tertiary navbar-expand-lg eerste-navbar fixed-top">
     <div class="container-fluid">
 
 
@@ -181,14 +181,10 @@
 
 
 
-
-<!-- dit is de onderkant van de navbar die ik wil targeten -->
-
-
-
-
   <!-- tweede navbar voor desktop -->
-  <nav class="navbar navbar-expand-lg  bg-custom d-lg-block d-none tweede-navbar sticky-top">
+
+
+  <nav class="navbar navbar-expand-lg fixed-top bg-custom d-lg-block d-none tweede-navbar" id="navbar">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -210,32 +206,102 @@
               <a class="nav-link" href="nieuw.php">Nieuw</a>
             </li>
 
-            <!-- sieraden dropdown -->
-            <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="sieradenDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" >
     Sieraden
   </a>
-  <ul class="dropdown-menu" aria-labelledby="sieradenDropdown">
-    <li><a class="dropdown-item" href="sieraden.php">Alle Sieraden</a></li>
-    <li><a class="dropdown-item" href="armbanden.php">Armbanden</a></li>
-    <li><a class="dropdown-item" href="enkelbandjes.php">Enkelbandjes</a></li>
-    <li><a class="dropdown-item" href="oorbellen.php">Oorbellen</a></li>
-    <li><a class="dropdown-item" href="ringen.php">Ringen</a></li>
-    <li><a class="dropdown-item no-border" href="kettingen.php">Kettingen</a></li>
+    <ul class="dropdown-menu">
+      <li><a href=""class="dropdown-item dropdown-toggle rechts">Oorbellen</a>
+      <ul class="dropdown-menu submenu oorbellen">
+        <li><a href="" class="dropdown-item">Alle oorbellen</a></li>
+        <li><a href="" class="dropdown-item">Hoops</a></li>
+        <li><a href="" class="dropdown-item">Oorringen & hangers</a></li>
+        <li><a href="" class="dropdown-item">Oorknopjes</a></li>
+        <li><a href="" class="dropdown-item">Doortrek oorbellen</a></li>
+        <li><a href="" class="dropdown-item">Ear Cuffs</a></li>
+        <li><a href="" class="dropdown-item">Piercings</a></li>
+        <li><a href="" class="dropdown-item">Sets</a></li>
+        <li><a href="" class="dropdown-item">Mix & match</a></li>
+
+
+      </ul>
+    </li>
+      <li><a href=""class="dropdown-item dropdown-toggle rechts">Kettingen</a>
+    <ul class="dropdown-menu submenu kettingen">
+      <li><a href="" class="dropdown-item">Alle kettingen</a></li>
+      <li><a href="" class="dropdown-item">Meerdere lagen</a></li>
+
+    </ul>
+    </li>
+
+
+      <li><a href=""class="dropdown-item dropdown-toggle rechts">Ringen</a>
+        <ul class="dropdown-menu submenu ringen">
+          <li><a href=""class="dropdown-item">Alle ringen</a></li>
+          <li><a href=""class="dropdown-item">Zegelringen</a></li>
+          <li><a href=""class="dropdown-item">One size ringen</a>
+          <li><a href=""class="dropdown-item">Vintage look</a>
+
+        </ul>
+    </li>
+    <li><a href="" class="dropdown-item">Armbanden</a></li>
+    <li><a href="" class="dropdown-item">Enkelbandjes</a></li>
+
+    </ul>
+  </li>
+
+
+
+
+<!-- accessoires dropdown -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="accessoiresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Accesoires
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="accessoiresDropdown">
+    <li><a class="dropdown-item" href="sieraden.php">Alle Accesoires</a></li>
+    <li><a class="dropdown-item" href="armbanden.php">Haaraccessoires</a></li>
+    <li><a class="dropdown-item" href="enkelbandjes.php">Telefoon Accesoires</a></li>
+    <li><a class="dropdown-item" href="oorbellen.php">Schipperspetten & Baretten</a></li>
+    <li><a class="dropdown-item" href="ringen.php">Tassen & Portemonnees</a></li>
   </ul>
 </li>
 
-
-
-            <li class="nav-item">
-              <a class="nav-link" href="accessoires.php">Accesoires</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="cadeauwinkel.php">Cadeauwinkel</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="collecties.php">Collecties</a>
-            </li>
+            <!-- collecties dropdown -->
+
+            <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="collecties-submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Collecties
+  </a>
+  <ul class="dropdown-menu scrolling-menu collecties" aria-labelledby="sieradenDropdown">
+    <li><a class="dropdown-item" href="sieraden.php">Alle Collecties</a></li>
+    <li><a class="dropdown-item" href="armbanden.php">Tell me your name</a></li>
+    <li><a class="dropdown-item" href="enkelbandjes.php">Year Of Birth</a></li>
+    <li><a class="dropdown-item" href="oorbellen.php">Mixed Symbols</a></li>
+    <li><a class="dropdown-item" href="ringen.php">Your favorite destination</a></li>
+    <li><a class="dropdown-item" href=".php">Classy Pearl</a></li>
+    <li><a class="dropdown-item" href=".php">You name it</a></li>
+    <li><a class="dropdown-item" href=".php">Kind words</a></li>
+    <li><a class="dropdown-item" href=".php">Asymmetrical symbols</a></li>
+    <li><a class="dropdown-item" href=".php">Shine on with zirconia</a></li>
+    <li><a class="dropdown-item" href=".php">Shine on with zirconia stud</a></li>
+    <li><a class="dropdown-item" href=".php">Daisy & Butterfly</a></li>
+    <li><a class="dropdown-item" href=".php">Fresh Vibes</a></li>
+    <li><a class="dropdown-item" href=".php">(Sea) Animals</a></li>
+    <li><a class="dropdown-item" href=".php">Galaxy</a></li>
+    <li><a class="dropdown-item" href=".php">Stones</a></li>
+    <li><a class="dropdown-item" href=".php">Pastel</a></li>
+    <li><a class="dropdown-item" href=".php">Over the Moon</a></li>
+    <li><a class="dropdown-item" href=".php">Lovely Summer</a></li>
+    <li><a class="dropdown-item" href=".php">Wild Ones</a></li>
+    <li><a class="dropdown-item" href=".php">Postcards</a></li>
+    <li><a class="dropdown-item" href=".php">Stylish Simplicity</a></li>
+    <li><a class="dropdown-item" href=".php">Smiley's</a></li>
+  </ul>
+</li>
             <li class="nav-item">
               <a class="nav-link" href="persoonlijk.php">Persoonlijk</a>
             </li>
@@ -246,6 +312,20 @@
         </div>
       </div>
   </nav>
+  
+
+  
+<!-- alert -->
+
+<div class="container-fluid m-5">
+<br>
+</div>
+<div class="alert-container" id="alert-container">
+  <div class="alert alert-primary custom-alert alert-dismissible fade show text-white text-center" role="alert">
+    gratis verzending vanaf €15
+    <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  </div>
 
 
 
@@ -260,10 +340,62 @@
 
 
 
+<section class="producten">
+
+<?php
+$dbHost = 'localhost';
+$dbUser = 'morris_jansen';
+$dbName = 'amorie_database';
+$dbPass = 'Wasmachine1';
+
+// Verbind met de database
+$conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
+
+// Controleer de verbinding
+if (!$conn) {
+    die("Databaseverbinding is mislukt: " . mysqli_connect_error());
+}
+
+// Query om alle producten op te halen
+$query = "SELECT productnaam, prijs FROM producten";
+
+$result = mysqli_query($conn, $query);
+
+if ($result) {
+    // Loop door de resultaten en toon 4 producten per rij
+    $count = 0;
+    echo "<div class='row'>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Splits de productnaam op basis van spaties
+        $productnaamParts = explode(' ', $row['productnaam']);
+
+        // Het eerste woord is de categorie
+        $categorie = $productnaamParts[0];
+
+        if ($categorie == 'Ketting') {
+            echo "<div class='col-md-3'>";
+            echo "<h3>" . $row['productnaam'] . "</h3>";
+            echo "<p>Prijs: €" . $row['prijs'] . "</p>";
+            echo "</div>";
+            $count++;
+            if ($count % 4 == 0) {
+                echo "</div><div class='row'>";
+            }
+        }
+    }
+    echo "</div>";
+} else {
+    echo "Fout bij het ophalen van productgegevens: " . mysqli_error($conn);
+}
+
+// Sluit de databaseverbinding
+mysqli_close($conn);
+?>
 
 
 
 
+</section>
 
 
 
@@ -413,6 +545,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
 <script src="script.js"></script>
 
 

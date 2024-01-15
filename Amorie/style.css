@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /* navbar!!! */
 
 
@@ -163,45 +164,66 @@
 }
 
 
-/* dropdown menu in navbar */
+/* dit is voor de submenus in de navbar */
+
+
 .dropdown-menu {
-  display: none;
+  position: relative;
+
 }
 
-/* Toon het dropdown-menu wanneer over sieraden wordt gehoverd */
-.nav-item.dropdown:hover .dropdown-menu {
+
+.oorbellen {
+  position: absolute;
+  display: none;
+  left: 100%;
+  top: 0px
+}
+
+.kettingen {
+  position: absolute;
+  display: none;
+  left: 100%;
+  top: 35px;
+
+}
+
+/* Draai de dropdown-pijl om (naar rechts) */
+.dropdown-toggle.rechts::after {
+  transform: rotate(270deg);
+}
+
+
+.ringen {
+  position: absolute;
+  display: none;
+  left: 100%;
+  top: 75px
+}
+
+
+.dropdown-menu>li:hover>.submenu {
   display: block;
 }
 
-.navbar .dropdown-menu .dropdown-item {
-  background-color: #0047AB;
-  color: #86B3F4;
-  padding: 10px;
+.eerste-navbar {
+  z-index: 992;
 }
 
-.navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #86B3F4;
-  color: #0047AB;
+.tweede-navbar {
+  z-index: 999;
+  margin-top: 60px;
 }
 
-.navbar .dropdown-menu {
-  margin: 0;
-  padding: 0;
+.navbar {
+  transition: top 0.8s ease; 
 }
-
-.navbar .dropdown-menu .dropdown-item {
-  border-bottom: 1px solid black;
-}
-
-.navbar .dropdown-menu .dropdown-item.no-border {
-  border-bottom: none;
-}
-
 
 
 
 
 /* alert !!!!*/
+
 
 @media (max-width: 768px) {
   .alert-container {
@@ -215,7 +237,6 @@
   }
   
 }
-
 
 
 div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text-center {
@@ -232,13 +253,19 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
   filter: invert(1);
 }
 
-/* eerste foto */
+
+
+/* hero */
+
+
 .img-1 {
   width: 100%;
 }
 
+
+
 /* knoppen onder de grote foto */
-/* grid-banner-items */
+
 .grid-banner-item {
   background-color: #86B3F4; 
   color: #fff; 
@@ -277,6 +304,17 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
 
 
 /* .products-preview-section */
+
+
+
+/* hier een probeersel voor box-shadow op product foto database */
+.products-preview-section .product-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hier voeg je de box-shadow toe */
+}
 
 
 
@@ -332,11 +370,10 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
   }
 }
 
+
+
 /* favoriet knop */
 
-
-/* styles.css */
-/* Favorietenknop stijlen */
 .product-item {
   text-align: center;
   padding: 10px;
@@ -344,7 +381,7 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
   border-radius: 5px;
   margin: 3px;
   display: inline-block;
-  position: relative; /* Voeg deze regel toe voor relatieve positionering */
+  position: relative;
 }
 
 /* favoriet icoon */
@@ -439,12 +476,6 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
 
 
 
-
-
-
-
-
-
 /* welkom bij amorie sectie */
 
 .welkom-bij-button {
@@ -497,14 +528,18 @@ div.alert.alert-primary.custom-alert.alert-dismissible.fade.show.text-white.text
 }
 
 
-/* hero sectie */
+/* review */
 
+/* zorgen dat je niet horizontaal kan scrollen ondanks de horizontaal bewegende afbeeldingen */
+.reviews-container {
+  overflow-x: hidden;
+}
+
+/* call to action */
 .button-container {
   height: 100px;
   margin-bottom:  150px;
 }
-
-
 
 
 
@@ -529,17 +564,6 @@ input[type="email"] {
   display: flex;
   justify-content: space-evenly;
 }
-
-
-/* scheidingslijn */
-
-/* scheidingslijn */
-/* .scheidings-lijn {
-  border-right: 1px solid rgb(224, 224, 224);
-  border-left: 1px solid rgb(224, 224, 224);
-
-} */
-
 
 
 

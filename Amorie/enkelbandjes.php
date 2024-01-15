@@ -6,14 +6,15 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nieuw</title>
+  <title>Enkelbandjes</title>
 </head>
 <body>
   
 
   <!-- dit is de werkende navbar met verkeerde order -->
 
-  <nav class="navbar bg-body-tertiary navbar-expand-lg sticky-top">
+
+  <nav class="navbar bg-body-tertiary navbar-expand-lg eerste-navbar fixed-top">
     <div class="container-fluid">
 
 
@@ -109,20 +110,20 @@
 
     <!-- aan de rechterkant groot scherm logo links -->
     <div class="d-none d-lg-flex align-items-center">
-      <a href="" class="logo-link">
+      <a href="favorieten.php" class="logo-link">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-suit-heart" viewBox="0 0 16 16">
   <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
 </svg>
       </a>
 
-      <a href="" class="logo-link">
+      <a href="winkelwagen.php" class="logo-link">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-bag" viewBox="0 0 16 16">
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
 </svg>
       </a>
 
-      <a href="" class="logo-link">
+      <a href="account.php" class="logo-link">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -134,19 +135,19 @@
 
     <!-- klein scherm logo links rechtsboven op het scherm -->
     <div class="d-flex align-items-center ms-auto d-lg-none sm-icons-container">
-      <a href="" class="sm-navbar-icons">
+      <a href="favorieten.php" class="sm-navbar-icons">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-suit-heart" viewBox="0 0 16 16">
   <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
 </svg>
       </a>
 
-      <a href="" class="sm-navbar-icons">
+      <a href="winkelwagen.php" class="sm-navbar-icons">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-bag" viewBox="0 0 16 16">
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
 </svg>
       </a>
 
-      <a href="" class="sm-navbar-icons">
+      <a href="account.php" class="sm-navbar-icons">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -181,14 +182,10 @@
 
 
 
-
-<!-- dit is de onderkant van de navbar die ik wil targeten -->
-
-
-
-
   <!-- tweede navbar voor desktop -->
-  <nav class="navbar navbar-expand-lg  bg-custom d-lg-block d-none tweede-navbar sticky-top">
+
+
+  <nav class="navbar navbar-expand-lg fixed-top bg-custom d-lg-block d-none tweede-navbar" id="navbar">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -199,7 +196,7 @@
           <h5 class="offcanvas-title mx-auto" id="offcanvasNavbarLabel">Amorie</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <!-- binnenkant hamburger -->
+
         <div class="offcanvas-body">
           <ul class="navbar-links">
             <!-- alle links -->
@@ -210,32 +207,105 @@
               <a class="nav-link" href="nieuw.php">Nieuw</a>
             </li>
 
-            <!-- sieraden dropdown -->
-            <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="sieradenDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" >
     Sieraden
   </a>
-  <ul class="dropdown-menu" aria-labelledby="sieradenDropdown">
-    <li><a class="dropdown-item" href="sieraden.php">Alle Sieraden</a></li>
-    <li><a class="dropdown-item" href="armbanden.php">Armbanden</a></li>
-    <li><a class="dropdown-item" href="enkelbandjes.php">Enkelbandjes</a></li>
-    <li><a class="dropdown-item" href="oorbellen.php">Oorbellen</a></li>
-    <li><a class="dropdown-item" href="ringen.php">Ringen</a></li>
-    <li><a class="dropdown-item no-border" href="kettingen.php">Kettingen</a></li>
-  </ul>
+    <ul class="dropdown-menu">
+      <li><a href=""class="dropdown-item dropdown-toggle rechts">Oorbellen</a>
+      <ul class="dropdown-menu submenu oorbellen">
+        <li><a href="" class="dropdown-item">Alle oorbellen</a></li>
+        <li><a href="" class="dropdown-item">Hoops</a></li>
+        <li><a href="" class="dropdown-item">Oorringen & hangers</a></li>
+        <li><a href="" class="dropdown-item">Oorknopjes</a></li>
+        <li><a href="" class="dropdown-item">Doortrek oorbellen</a></li>
+        <li><a href="" class="dropdown-item">Ear Cuffs</a></li>
+        <li><a href="" class="dropdown-item">Piercings</a></li>
+        <li><a href="" class="dropdown-item">Sets</a></li>
+        <li><a href="" class="dropdown-item">Mix & match</a></li>
+
+
+      </ul>
+    </li>
+      <li><a href=""class="dropdown-item dropdown-toggle rechts">Kettingen</a>
+    <ul class="dropdown-menu submenu kettingen">
+      <li><a href="kettingen.php?cat=alle" class="dropdown-item">Alle kettingen</a></li>
+      <li><a href="kettingen.php?cat=meerdere-lagen" class="dropdown-item">Meerdere lagen</a></li>
+
+    </ul>
+    </li>
+
+
+
+    <li><a href="#" class="dropdown-item dropdown-toggle rechts">Ringen</a>
+    <ul class="dropdown-menu submenu ringen">
+      <li><a href="ringen.php?cat=alle" id="alle" class="dropdown-item">Alle ringen</a></li>
+      <li><a href="ringen.php?cat=zegel" id="zegel" class="dropdown-item">Zegelringen</a></li>
+      <li><a href="ringen.php?cat=onesize" id="onesize" class="dropdown-item">One size ringen</a></li>
+      <li><a href="ringen.php?cat=vintage" id="vintage" class="dropdown-item">Vintage look</a></li>
+    </ul>
 </li>
 
 
 
-            <li class="nav-item">
-              <a class="nav-link" href="accessoires.php">Accesoires</a>
-            </li>
+    <li><a href="armbanden.php" class="dropdown-item">Armbanden</a></li>
+    <li><a href="enkelbandjes.php" class="dropdown-item">Enkelbandjes</a></li>
+
+    </ul>
+  </li>
+
+
+
+
+<!-- accessoires dropdown -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="accessoiresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Accesoires
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="accessoiresDropdown">
+    <li><a class="dropdown-item" href="sieraden.php">Alle Accesoires</a></li>
+    <li><a class="dropdown-item" href="armbanden.php">Haaraccessoires</a></li>
+    <li><a class="dropdown-item" href="enkelbandjes.php">Telefoon Accesoires</a></li>
+    <li><a class="dropdown-item" href="oorbellen.php">Schipperspetten & Baretten</a></li>
+    <li><a class="dropdown-item" href="ringen.php">Tassen & Portemonnees</a></li>
+  </ul>
+</li>
+
             <li class="nav-item">
               <a class="nav-link" href="cadeauwinkel.php">Cadeauwinkel</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="collecties.php">Collecties</a>
-            </li>
+            <!-- collecties dropdown -->
+
+            <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="collecties-submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Collecties
+  </a>
+  <ul class="dropdown-menu scrolling-menu collecties" aria-labelledby="sieradenDropdown">
+    <li><a class="dropdown-item" href="sieraden.php">Alle Collecties</a></li>
+    <li><a class="dropdown-item" href="armbanden.php">Tell me your name</a></li>
+    <li><a class="dropdown-item" href="enkelbandjes.php">Year Of Birth</a></li>
+    <li><a class="dropdown-item" href="oorbellen.php">Mixed Symbols</a></li>
+    <li><a class="dropdown-item" href="ringen.php">Your favorite destination</a></li>
+    <li><a class="dropdown-item" href=".php">Classy Pearl</a></li>
+    <li><a class="dropdown-item" href=".php">You name it</a></li>
+    <li><a class="dropdown-item" href=".php">Kind words</a></li>
+    <li><a class="dropdown-item" href=".php">Asymmetrical symbols</a></li>
+    <li><a class="dropdown-item" href=".php">Shine on with zirconia</a></li>
+    <li><a class="dropdown-item" href=".php">Shine on with zirconia stud</a></li>
+    <li><a class="dropdown-item" href=".php">Daisy & Butterfly</a></li>
+    <li><a class="dropdown-item" href=".php">Fresh Vibes</a></li>
+    <li><a class="dropdown-item" href=".php">(Sea) Animals</a></li>
+    <li><a class="dropdown-item" href=".php">Galaxy</a></li>
+    <li><a class="dropdown-item" href=".php">Stones</a></li>
+    <li><a class="dropdown-item" href=".php">Pastel</a></li>
+    <li><a class="dropdown-item" href=".php">Over the Moon</a></li>
+    <li><a class="dropdown-item" href=".php">Lovely Summer</a></li>
+    <li><a class="dropdown-item" href=".php">Wild Ones</a></li>
+    <li><a class="dropdown-item" href=".php">Postcards</a></li>
+    <li><a class="dropdown-item" href=".php">Stylish Simplicity</a></li>
+    <li><a class="dropdown-item" href=".php">Smiley's</a></li>
+  </ul>
+</li>
             <li class="nav-item">
               <a class="nav-link" href="persoonlijk.php">Persoonlijk</a>
             </li>
@@ -246,6 +316,151 @@
         </div>
       </div>
   </nav>
+  
+
+  
+<!-- alert -->
+
+<div class="container-fluid m-5">
+<br>
+</div>
+<div class="alert-container" id="alert-container">
+  <div class="alert alert-primary custom-alert alert-dismissible fade show text-white text-center" role="alert">
+    gratis verzending vanaf €15
+    <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <?php
+  $dbHost = 'localhost';
+  $dbUser = 'morris_jansen';
+  $dbName = 'amorie_database';
+  $dbPass = 'Wasmachine1';
+
+  // Gebruik PDO voor veiligheid bij het verbinden met de database
+  $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+
+  if (!$pdo) {
+      die("Databaseverbinding is mislukt: " . mysqli_connect_error());
+  }
+
+  // Standaardquery voor alle enkelbandjes met prepared statement voor veiligheid
+  $query = "SELECT * FROM producten WHERE productnaam LIKE :searchTerm";
+  $statement = $pdo->prepare($query);
+  $searchTerm = '%enkelbandje%';
+  $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+  $statement->execute();
+
+  // Zorg ervoor dat alle resultaten op een veilige manier worden opgehaald
+  $enkelbandjesResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$enkelbandjesResults) {
+      echo "Geen resultaten gevonden";
+  } else {
+      $processedEnkelbandjes = [];
+
+      foreach ($enkelbandjesResults as $enkelbandje) {
+          $enkelbandje['availability'] = [];
+
+          $metalOptions = ['zilver', 'goud'];
+
+          foreach ($metalOptions as $metal) {
+              if (isset($enkelbandje['keuze_combinatie']) && stripos($enkelbandje['keuze_combinatie'], $metal) !== false) {
+                  $enkelbandje['availability'][$metal] = ucfirst($metal);
+              }
+          }
+
+          // Als er geen metaal in keuze_combinatie is, kijk naar de productnaam
+          if (empty($enkelbandje['availability']) && !empty($enkelbandje['productnaam'])) {
+              foreach ($metalOptions as $metal) {
+                  if (stripos($enkelbandje['productnaam'], $metal) !== false) {
+                      $enkelbandje['availability'][$metal] = ucfirst($metal);
+                  }
+              }
+          }
+
+          // Verwijder 'goud' en 'zilver' uit de productnaam (hoofdletterongevoelig)
+          $enkelbandje['productnaam'] = preg_replace("/\b(goud|zilver)\b/i", '', $enkelbandje['productnaam']);
+
+          // Voeg het verwerkte enkelbandje toe aan de array
+          $processedEnkelbandjes[] = $enkelbandje;
+      }
+
+      $mergedEnkelbandjes = [];
+
+      // Verwerk de enkelbandjes om duplicaten samen te voegen
+      foreach ($processedEnkelbandjes as $enkelbandje) {
+          $productNameWithoutMetal = $enkelbandje['productnaam'];
+
+          foreach ($processedEnkelbandjes as $otherEnkelbandje) {
+              if ($enkelbandje !== $otherEnkelbandje && $productNameWithoutMetal === $otherEnkelbandje['productnaam']) {
+                  $enkelbandje['availability'] = array_merge($enkelbandje['availability'], $otherEnkelbandje['availability']);
+              }
+          }
+
+          // Verwijder duplicaten en voeg het samengevoegde enkelbandje toe aan de array
+          $mergedEnkelbandjes[$productNameWithoutMetal] = $enkelbandje;
+      }
+
+      // Toon de resultaten in HTML
+      echo "<div class='container-fluid'>";
+      echo "<div class='row justify-content-around'>";
+
+      foreach ($mergedEnkelbandjes as $mergedEnkelbandje) {
+          echo "<div class='col-md-3 col-lg-2 product-item mb-4'>";
+          echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-1.webp' alt='Productafbeelding'>";
+          echo "<h3>" . $mergedEnkelbandje['productnaam'] . "</h3>";
+          echo "<p>Prijs: €" . $mergedEnkelbandje['prijs'] . "</p>";
+
+          
+          if (!empty($mergedEnkelbandje['availability'])) {
+              echo "<p>Beschikbaar in " . implode(" & ", $mergedEnkelbandje['availability']) . "</p>";
+          }
+
+          echo "<div class='favoriet-button-container'>";
+          echo "<div class='favoriet-icoon-cirkel'>";
+          echo "<button class='favoriet-button'></button>";
+          echo "</div>";
+          echo "</div>";
+
+          echo "</div>";
+      }
+
+      echo "</div>";
+      echo "</div>";
+  }
+
+  // Sluit de databaseverbinding
+  $pdo = null;
+    ?>
+
+
+
+
+
+
+
+
+
+
 
 
 
