@@ -366,208 +366,208 @@
 
 
   <?php
-// Function for database interaction
-  function connectToDatabase($dbHost, $dbUser, $dbPass, $dbName)
-  {
-      $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+// Functie voor database-interactie
+function connectToDatabase($dbHost, $dbUser, $dbPass, $dbName)
+{
+    $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 
-      if ($conn->connect_error) {
-          die("Databaseverbinding is mislukt: " . $conn->connect_error);
-      }
+    if ($conn->connect_error) {
+        die("Databaseverbinding is mislukt: " . $conn->connect_error);
+    }
 
-      return $conn;
-  }
+    return $conn;
+}
 
-// Function to execute a prepared query with parameters
-  function executePreparedQuery($conn, $query, $params = [])
-  {
-      $stmt = $conn->prepare($query);
+// Functie om een voorbereide query met parameters uit te voeren
+function executePreparedQuery($conn, $query, $params = [])
+{
+    $stmt = $conn->prepare($query);
 
-      if (!$stmt) {
-          die("Fout bij het voorbereiden van de query: " . $conn->error);
-      }
+    if (!$stmt) {
+        die("Fout bij het voorbereiden van de query: " . $conn->error);
+    }
 
-      if (!empty($params)) {
-          $types = str_repeat('s', count($params));
-          $stmt->bind_param($types, ...$params);
-      }
+    if (!empty($params)) {
+        $types = str_repeat('s', count($params));
+        $stmt->bind_param($types, ...$params);
+    }
 
-      $result = $stmt->execute();
+    $result = $stmt->execute();
 
-      if (!$result) {
-          die("Fout bij het uitvoeren van de query: " . $stmt->error);
-      }
+    if (!$result) {
+        die("Fout bij het uitvoeren van de query: " . $stmt->error);
+    }
 
-      return $stmt->get_result();
-  }
+    return $stmt->get_result();
+}
 
-// Function to close the database connection
-  function closeConnection($conn)
-  {
-      $conn->close();
-  }
+// Functie om de databaseverbinding te sluiten
+function closeConnection($conn)
+{
+    $conn->close();
+}
 
-// Function to determine materials
-  function getMaterials($productName, $combination)
-  {
-      $materials = [];
+// Functie om materialen te bepalen
+function getMaterials($productName, $combination)
+{
+    $materials = [];
 
-      if (stripos($productName, 'zilver') !== false) {
-          $materials[] = 'zilver';
-      }
+    if (stripos($productName, 'zilver') !== false) {
+        $materials[] = 'zilver';
+    }
 
-      if (stripos($productName, 'goud') !== false) {
-          $materials[] = 'goud';
-      }
+    if (stripos($productName, 'goud') !== false) {
+        $materials[] = 'goud';
+    }
 
-      if (stripos($combination, 'zilver') !== false) {
-          $materials[] = 'zilver';
-      }
+    if (stripos($combination, 'zilver') !== false) {
+        $materials[] = 'zilver';
+    }
 
-      if (stripos($combination, 'goud') !== false) {
-          $materials[] = 'goud';
-      }
+    if (stripos($combination, 'goud') !== false) {
+        $materials[] = 'goud';
+    }
 
-      return array_unique($materials);
-  }
+    return array_unique($materials);
+}
 
-// Function to process metal logic
-  function processMetalLogic($products)
-  {
-      $processedProducts = [];
+// Functie om metalen logica te verwerken
+function processMetalLogic($products)
+{
+    $processedProducts = [];
 
-      foreach ($products as $product) {
-          // Ensure the availability array is always defined
-          $product['availability'] = [];
+    foreach ($products as $product) {
+        // Zorg ervoor dat de array voor beschikbaarheid altijd is gedefinieerd
+        $product['availability'] = [];
 
-          // Specific check for 'Initial Vintage oorbel'
-          if (stripos($product['productnaam'], 'Initial Vintage oorbel') !== false) {
-              // Call the function to determine materials and add availability
-              $materials = getMaterials($product['productnaam'], $product['keuze_combinatie']);
-              $product['availability'] = array_merge($product['availability'], $materials);
+        // Specifieke controle voor 'Initial Vintage oorbel'
+        if (stripos($product['productnaam'], 'Initial Vintage oorbel') !== false) {
+            // Roep de functie aan om materialen te bepalen en beschikbaarheid toe te voegen
+            $materials = getMaterials($product['productnaam'], $product['keuze_combinatie']);
+            $product['availability'] = array_merge($product['availability'], $materials);
 
-              // Add the processed product to the array
-              $processedProducts[] = $product;
+            // Voeg het verwerkte product toe aan de array
+            $processedProducts[] = $product;
 
-              // Continue with the next iteration to avoid double processing
-              continue;
-          }
+            // Ga door met de volgende iteratie om dubbele verwerking te voorkomen
+            continue;
+        }
 
-          // Normal processing for other products
-          $metalOptions = ['zilver', 'goud'];
+        // Normale verwerking voor andere producten
+        $metalOptions = ['zilver', 'goud'];
 
-          foreach ($metalOptions as $metal) {
-              // Call the function to determine materials and add availability
-              if (isset($product['keuze_combinatie']) && stripos($product['keuze_combinatie'], $metal) !== false) {
-                  $product['availability'][] = ucfirst($metal); // First letter to uppercase
-              } elseif (stripos($product['productnaam'], $metal) !== false) {
-                  $product['availability'][] = ucfirst($metal); // First letter to uppercase
-              }
-          }
+        foreach ($metalOptions as $metal) {
+            // Roep de functie aan om materialen te bepalen en beschikbaarheid toe te voegen
+            if (isset($product['keuze_combinatie']) && stripos($product['keuze_combinatie'], $metal) !== false) {
+                $product['availability'][] = ucfirst($metal); // Eerste letter naar hoofdletter
+            } elseif (stripos($product['productnaam'], $metal) !== false) {
+                $product['availability'][] = ucfirst($metal); // Eerste letter naar hoofdletter
+            }
+        }
 
-          // Remove 'goud' and 'zilver' from the product name (case-insensitive)
-          $product['productnaam'] = preg_replace("/\b(goud|zilver)\b/i", '', $product['productnaam']);
+        // Verwijder 'goud' en 'zilver' uit de productnaam (hoofdletterongevoelig)
+        $product['productnaam'] = preg_replace("/\b(goud|zilver)\b/i", '', $product['productnaam']);
 
-          // Add the processed product to the array
-          $processedProducts[] = $product;
-      }
+        // Voeg het verwerkte product toe aan de array
+        $processedProducts[] = $product;
+    }
 
-      return $processedProducts;
-  }
+    return $processedProducts;
+}
 
-// Function to merge products with the same name
-  function mergeSameNameProducts($products)
-  {
-      $mergedProducts = [];
+// Functie om producten met dezelfde naam samen te voegen
+function mergeSameNameProducts($products)
+{
+    $mergedProducts = [];
 
-      foreach ($products as $product) {
-          $productNameWithoutMetal = $product['productnaam'];
+    foreach ($products as $product) {
+        $productNameWithoutMetal = $product['productnaam'];
 
-          // Search for a product with the same name and merge availability
-          $mergedProductFound = false;
-          foreach ($mergedProducts as &$mergedProduct) {
-              if ($productNameWithoutMetal === $mergedProduct['productnaam']) {
-                  $mergedProduct['availability'] = array_merge($mergedProduct['availability'], $product['availability']);
-                  $mergedProductFound = true;
-                  break;
-              }
-          }
+        // Zoek naar een product met dezelfde naam en voeg de beschikbaarheid samen
+        $mergedProductFound = false;
+        foreach ($mergedProducts as &$mergedProduct) {
+            if ($productNameWithoutMetal === $mergedProduct['productnaam']) {
+                $mergedProduct['availability'] = array_merge($mergedProduct['availability'], $product['availability']);
+                $mergedProductFound = true;
+                break;
+            }
+        }
 
-          // If no merged product is found, add the current product to the array
-          if (!$mergedProductFound) {
-              $mergedProducts[] = $product;
-          }
-      }
+        // Als er geen samengevoegd product is gevonden, voeg het huidige product toe aan de array
+        if (!$mergedProductFound) {
+            $mergedProducts[] = $product;
+        }
+    }
 
-      return $mergedProducts;
-  }
+    return $mergedProducts;
+}
 
-  try {
-      // Database connection parameters
-      $dbHost = 'localhost';
-      $dbUser = 'morris_jansen';
-      $dbName = 'amorie_database';
-      $dbPass = 'Wasmachine1';
+try {
+    // Databaseverbinding parameters
+    $dbHost = 'localhost';
+    $dbUser = 'morris_jansen';
+    $dbName = 'amorie_database';
+    $dbPass = 'Wasmachine1';
 
-      // Connect to the database
-      $conn = connectToDatabase($dbHost, $dbUser, $dbPass, $dbName);
+    // Maak verbinding met de database
+    $conn = connectToDatabase($dbHost, $dbUser, $dbPass, $dbName);
 
-      // URL parameters
-      $category = $_GET['cat'] ?? ''; // If 'cat' is not set, use an empty string
+    // URL parameters
+    $category = $_GET['cat'] ?? ''; // Als 'cat' niet is ingesteld, gebruik een lege string
 
-      // Query based on the category
-      $query = "SELECT * FROM producten";
+    // Query op basis van de categorie
+    $query = "SELECT * FROM producten";
 
-      if ($category === 'meerdere-lagen') {
-          $query .= " WHERE categorie = ?";
-          $params = [$category];
-      } elseif ($category === 'alle') {
-          $query .= " WHERE categorie LIKE '%ketting%'";
-      } // Add other categories as needed
+    if ($category === 'meerdere-lagen') {
+        $query .= " WHERE categorie = ?";
+        $params = [$category];
+    } elseif ($category === 'alle') {
+        $query .= " WHERE categorie LIKE '%ketting%'";
+    } // Voeg andere categorieën toe indien nodig
 
-      // Execute the query
-      $result = executePreparedQuery($conn, $query, $params ?? []);
+    // Voer de query uit
+    $result = executePreparedQuery($conn, $query, $params ?? []);
 
-      // Process the products
-      $products = [];
+    // Verwerk de producten
+    $products = [];
 
-      while ($row = $result->fetch_assoc()) {
-          $products[] = $row;
-      }
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
 
-      // Call the function to perform metal logic
-      $processedProducts = processMetalLogic($products);
+    // Roep de functie aan om de metalen logica uit te voeren
+    $processedProducts = processMetalLogic($products);
 
-      // Call the function to merge products with the same name
-      $mergedProducts = mergeSameNameProducts($processedProducts);
+    // Roep de functie aan om producten met dezelfde naam samen te voegen
+    $mergedProducts = mergeSameNameProducts($processedProducts);
 
-      // HTML display of the products
-      echo "<div class='container-fluid'>";
-      echo "<div class='row justify-content-around'>";
+    // HTML-weergave van de producten
+    echo "<div class='container-fluid'>";
+    echo "<div class='row justify-content-around'>";
 
-      foreach ($mergedProducts as $mergedProduct) {
-          // Your product display logic here
+    foreach ($mergedProducts as $mergedProduct) {
+        // Jouw logica voor de weergave van producten hier
 
-          // Example: display product name, price, image, and availability
-          echo "<div class='col-md-2 product-item'>";
-          echo "<h3>" . $mergedProduct['productnaam'] . "</h3>";
-          echo "<p>Prijs: €" . $mergedProduct['prijs'] . "</p>";
-          echo "<p>Beschikbaarheid: " . implode(" & ", array_unique($mergedProduct['availability'])) . "</p>";
-          echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-3.jpg' alt='Productafbeelding'>";
-          echo "</div>";
-      }
+        // Voorbeeld: toon productnaam, prijs, afbeelding en beschikbaarheid
+        echo "<div class='col-md-2 product-item'>";
+        echo "<h3>" . $mergedProduct['productnaam'] . "</h3>";
+        echo "<p>Prijs: €" . $mergedProduct['prijs'] . "</p>";
+        echo "<p>Beschikbaarheid: " . implode(" & ", array_unique($mergedProduct['availability'])) . "</p>";
+        echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-3.jpg' alt='Productafbeelding'>";
+        echo "</div>";
+    }
 
-      echo "</div>";
-      echo "</div>";
-  } catch (Exception $e) {
-      echo "Er is een fout opgetreden: " . $e->getMessage();
-  } finally {
-      // Close the database connection
-      if (isset($conn)) {
-          closeConnection($conn);
-      }
-  }
-    ?>
+    echo "</div>";
+    echo "</div>";
+} catch (Exception $e) {
+    echo "Er is een fout opgetreden: " . $e->getMessage();
+} finally {
+    // Sluit de databaseverbinding
+    if (isset($conn)) {
+        closeConnection($conn);
+    }
+}
+?>
 
 
 

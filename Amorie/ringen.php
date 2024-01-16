@@ -354,179 +354,159 @@
 
 
 
-
-
   <?php
+// Functies
+function connectToDatabase($dbHost, $dbUser, $dbPass, $dbName)
+{
+    try {
+        $conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $conn;
+    } catch (PDOException $e) {
+        die("Databaseverbinding is mislukt: " . $e->getMessage());
+    }
+}
 
-  try {
-      // Database interaction functions
-      function connectToDatabase($dbHost, $dbUser, $dbPass, $dbName)
-      {
-          $conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
-          if (!$conn) {
-              die("Databaseverbinding is mislukt: " . mysqli_connect_error());
-          }
-          return $conn;
-      }
+function executePreparedQuery($conn, $query, $params = [])
+{
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->execute($params);
+        return $stmt;
+    } catch (PDOException $e) {
+        echo "Fout bij het uitvoeren van de query: " . $e->getMessage();
+        return false;
+    }
+}
 
-      function executePreparedQuery($conn, $query, $params = [])
-      {
-          $stmt = mysqli_prepare($conn, $query);
+function closeConnection($conn)
+{
+    $conn = null;
+}
 
-          if ($stmt === false) {
-              echo "Fout bij het voorbereiden van de query: " . mysqli_error($conn);
-              return false;
-          }
+function fetchMergedProducts($result)
+{
+    $mergedProducts = [];
 
-          if (!empty($params)) {
-              $types = str_repeat('s', count($params));
-              mysqli_stmt_bind_param($stmt, $types, ...$params);
-          }
+    while ($product = $result->fetch(PDO::FETCH_ASSOC)) {
+        $productNameWithoutMetal = preg_replace('/\b(goud|zilver)\b/i', '', $product['productnaam']);
 
-          $result = mysqli_stmt_execute($stmt);
+        if (stripos($product['keuze_combinatie'], 'zilver') !== false) {
+            $product['zilver'] = true;
+        }
 
-          if (!$result) {
-              echo "Fout bij het uitvoeren van de query: " . mysqli_error($conn);
-              return false;
-          }
+        if (stripos($product['keuze_combinatie'], 'goud') !== false) {
+            $product['goud'] = true;
+        }
 
-          return mysqli_stmt_get_result($stmt);
-      }
+        if (!isset($mergedProducts[$productNameWithoutMetal])) {
+            $mergedProducts[$productNameWithoutMetal] = $product;
+        }
+    }
 
-      function closeConnection($conn)
-      {
-          mysqli_close($conn);
-      }
+    return $mergedProducts;
+}
 
-      function fetchMergedProducts($result)
-      {
-          $mergedProducts = [];
+function displayProduct($mergedProduct)
+{
+    echo "<div class='col-md-2 product-item mb-4' style='text-align: center;'>";
+    echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-3.jpg' alt='Productafbeelding'>";
 
-          while ($product = mysqli_fetch_assoc($result)) {
-              $productNameWithoutMetal = preg_replace('/\b(goud|zilver)\b/i', '', $product['productnaam']);
+    $availability = [];
 
-              if (stripos($product['keuze_combinatie'], 'zilver') !== false) {
-                  $product['zilver'] = true;
-              }
+    if (isset($mergedProduct['zilver']) && !empty($mergedProduct['zilver']) && empty($mergedProduct['goud'])) {
+        $availability[] = "Zilver";
+    }
 
-              if (stripos($product['keuze_combinatie'], 'goud') !== false) {
-                  $product['goud'] = true;
-              }
+    if (isset($mergedProduct['goud']) && !empty($mergedProduct['goud']) && empty($mergedProduct['zilver'])) {
+        $availability[] = "Goud";
+    }
 
-              if (!isset($mergedProducts[$productNameWithoutMetal])) {
-                  $mergedProducts[$productNameWithoutMetal] = $product;
-              }
-          }
+    if (isset($mergedProduct['goud']) && isset($mergedProduct['zilver'])) {
+        $availability[] = "Goud & Zilver";
+    }
 
-          return $mergedProducts;
-      }
+    if (empty($availability)) {
+        $productNameLower = strtolower($mergedProduct['productnaam']);
 
-      function displayProduct($mergedProduct)
-      {
-          echo "<div class='col-md-2 product-item mb-4' style='text-align: center;'>";
-          echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-3.jpg' alt='Productafbeelding'>";
+        if (strpos($productNameLower, 'zilver') !== false) {
+            $availability[] = "Zilver";
+        }
 
-          $availability = [];
+        if (strpos($productNameLower, 'goud') !== false) {
+            $availability[] = "Goud";
+        }
 
-          if (isset($mergedProduct['zilver']) && !empty($mergedProduct['zilver']) && empty($mergedProduct['goud'])) {
-              $availability[] = "Zilver";
-          }
+        $productNameForDisplay = preg_replace('/\b(goud|zilver)\b/i', '', $mergedProduct['productnaam']);
+        echo "<h3>" . $productNameForDisplay . "</h3>";
+    } else {
+        echo "<h3>" . $mergedProduct['productnaam'] . "</h3>";
+    }
 
-          if (isset($mergedProduct['goud']) && !empty($mergedProduct['goud']) && empty($mergedProduct['zilver'])) {
-              $availability[] = "Goud";
-          }
+    echo "<p>Prijs: €" . $mergedProduct['prijs'] . "</p>";
+    echo "<p>Beschikbaar in " . implode(" & ", $availability) . "</p>";
+    echo "<div class='favoriet-button-container'>";
+    echo "<div class='favoriet-icoon-cirkel'>";
+    echo "<button class='favoriet-button'></button>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+}
 
-          if (isset($mergedProduct['goud']) && isset($mergedProduct['zilver'])) {
-              $availability[] = "Goud & Zilver";
-          }
+// Databaseverbinding parameters
+$dbHost = 'localhost';
+$dbUser = 'morris_jansen';
+$dbName = 'amorie_database';
+$dbPass = 'Wasmachine1';
 
-          if (empty($availability)) {
-              $productNameLower = strtolower($mergedProduct['productnaam']);
+// Maak verbinding met de database
+$conn = connectToDatabase($dbHost, $dbUser, $dbPass, $dbName);
 
-              if (strpos($productNameLower, 'zilver') !== false) {
-                  $availability[] = "Zilver";
-              }
+// URL parameters
+$category = $_GET['cat'] ?? ''; // Als 'cat' niet is ingesteld, gebruik een lege string
 
-              if (strpos($productNameLower, 'goud') !== false) {
-                  $availability[] = "Goud";
-              }
+// Associatieve array met categorieën en bijbehorende queries
+$categoriesQueries = [
+    'alle' => "SELECT * FROM producten",
+    'onesize' => "SELECT * FROM producten WHERE categorie = 'one-size-ringen'",
+    'andere' => "SELECT * FROM producten WHERE categorie LIKE ?",
+];
 
-              $productNameForDisplay = preg_replace('/\b(goud|zilver)\b/i', '', $mergedProduct['productnaam']);
-              echo "<h3>" . $productNameForDisplay . "</h3>";
-          } else {
-              echo "<h3>" . $mergedProduct['productnaam'] . "</h3>";
-          }
+// Bepaal de geselecteerde categorie of gebruik de standaardcategorie
+$query = isset($categoriesQueries[$cat]) ? $categoriesQueries[$cat] : "SELECT * FROM producten WHERE productnaam LIKE ?";
+$params = isset($categoriesQueries[$cat]) ? [] : ["%ring%"];
 
-          echo "<p>Prijs: €" . $mergedProduct['prijs'] . "</p>";
-          echo "<p>Beschikbaar in " . implode(" & ", $availability) . "</p>";
-          echo "<div class='favoriet-button-container'>";
-          echo "<div class='favoriet-icoon-cirkel'>";
-          echo "<button class='favoriet-button'></button>";
-          echo "</div>";
-          echo "</div>";
-          echo "</div>";
-      }
-// Connect to the database
-      $dbHost = 'localhost';
-      $dbUser = 'morris_jansen';
-      $dbName = 'amorie_database';
-      $dbPass = 'Wasmachine1';
+if ($cat != '') {
+    echo "<h1>" . ucfirst($cat) . "</h1>";
 
-      $conn = connectToDatabase($dbHost, $dbUser, $dbPass, $dbName);
+    // Uitvoeren van de query voor de geselecteerde categorie
+    $result = executePreparedQuery($conn, $query, $params);
 
-// Initialize query and parameters by default
-      $query = "SELECT * FROM producten WHERE productnaam LIKE ?";
-      $params = ["%ring%"];
+    if (!$result) {
+        echo "Fout bij het uitvoeren van de query: " . mysqli_error($conn);
+    } else {
+        $mergedProducts = fetchMergedProducts($result);
 
-// Get the category from the URL
-      $cat = isset($_GET['cat']) ? str_replace(' ', '-', $_GET['cat']) : '';
+        echo "<div class='container-fluid'>";
+        echo "<div class='row justify-content-around'>";
 
-      if ($cat != '') {
-          echo "<h1>" . ucfirst($cat) . "</h1>";
+        if (empty($mergedProducts)) {
+            echo "Geen producten gevonden voor categorie: " . ucfirst($cat);
+        } else {
+            foreach ($mergedProducts as $mergedProduct) {
+                displayProduct($mergedProduct);
+            }
+        }
 
-          // Handle 'alle' category as a special case
-          if (strtolower($cat) === 'alle') {
-              $query = "SELECT * FROM producten";
-              $params = [];
-          } elseif (strtolower($cat) === 'onesize') {
-              // Specific query for 'onesize' category
-              $query = "SELECT * FROM producten WHERE categorie = ?";
-              $params = ["one-size-ringen"];
-          } else {
-              // General query for other categories
-              $query = "SELECT * FROM producten WHERE categorie LIKE ?";
-              $params = ["%" . $cat . "%"];
-          }
-      }
+        echo "</div>";
+        echo "</div>";
+    }
+}
 
-      $result = executePreparedQuery($conn, $query, $params);
+// Sluit de databaseverbinding
+closeConnection($conn);
+?>
 
-      if (!$result) {
-          echo "Fout bij het uitvoeren van de query: " . mysqli_error($conn);
-      } else {
-          $mergedProducts = fetchMergedProducts($result);
-
-          echo "<div class='container-fluid'>";
-          echo "<div class='row justify-content-around'>";
-
-          if (empty($mergedProducts)) {
-              echo "Geen producten gevonden voor categorie: " . ucfirst($cat);
-          } else {
-              foreach ($mergedProducts as $mergedProduct) {
-                  displayProduct($mergedProduct);
-              }
-          }
-
-          echo "</div>";
-          echo "</div>";
-      }
-
-// Close the database connection in a finally-block
-      closeConnection($conn);
-  } catch (Exception $e) {
-      echo "Er is een fout opgetreden: " . $e->getMessage();
-  }
-    ?>
 
 
 

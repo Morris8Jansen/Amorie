@@ -388,75 +388,6 @@
 
 
   <?php
-// Databaseverbinding
-  $dbHost = 'localhost';
-  $dbUser = 'morris_jansen';
-  $dbName = 'amorie_database';
-  $dbPass = 'Wasmachine1';
-
-// Gebruik PDO voor veiligheid bij het verbinden met de database
-  $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-
-  try {
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-      // Associatieve array met categorieën en bijbehorende queries
-      $categories = [
-        'alle-oorbellen' => "SELECT * FROM producten WHERE productnaam LIKE '%oorbel%'",
-        'hoops' => "SELECT * FROM producten WHERE categorie LIKE '%hoops%'",
-        'oorringen-en-hangers' => "SELECT * FROM producten WHERE categorie LIKE '%oorringen en hangers%'",
-        'oorknopjes' => "SELECT * FROM producten WHERE categorie LIKE '%oorknopjes%'",
-        'doortrek-oorbellen' => "SELECT * FROM producten WHERE categorie LIKE '%doortrek oorbellen%'",
-        'ear-cuffs' => "SELECT * FROM producten WHERE categorie LIKE '%ear cuffs%'",
-        'piercings' => "SELECT * FROM producten WHERE categorie LIKE '%piercing%'",
-        'sets' => "SELECT * FROM producten WHERE categorie LIKE '%sets%'",
-        'mix-en-match' => "SELECT * FROM producten WHERE categorie LIKE '%mix-&-match%'"
-      ];
-
-      // Bepaal de geselecteerde categorie of gebruik de standaardcategorie
-      $selectedCategory = isset($_GET['cat']) ? $_GET['cat'] : 'alle-oorbellen';
-
-      // Uitvoeren van de query voor de geselecteerde categorie
-      $query = isset($categories[$selectedCategory]) ? $categories[$selectedCategory] :
-        die("<p>Dit is een foutmelding of een standaardcategorie.</p>");
-
-      // Uitvoeren van de query
-      $stmt = $pdo->query($query);
-      $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      // Specifieke logica toepassen op de producten
-      $processedProducts = processMetalLogic($products);
-
-      // Productnamen samenvoegen op basis van beschikbaarheid
-      $mergedProducts = mergeProducts($processedProducts);
-
-      // HTML-weergave van de producten
-      echo "<div class='container-fluid'>";
-      echo "<div class='row justify-content-around'>";
-
-      foreach ($mergedProducts as $mergedProduct) {
-          // Jouw productweergave logica hier
-
-          // Voorbeeld: productnaam, prijs, afbeelding en beschikbaarheid weergeven
-          echo "<div class='col-md-2 product-item'>";
-          echo "<h3>" . $mergedProduct['productnaam'] . "</h3>";
-          echo "<p>Prijs: €" . $mergedProduct['prijs'] . "</p>";
-          echo "<p>Beschikbaarheid: " . getAvailability($mergedProduct['availability']) . "</p>";
-          echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-3.jpg' alt='Productafbeelding'>";
-          echo "</div>";
-      }
-
-      echo "</div>";
-      echo "</div>";
-  } catch (PDOException $e) {
-      echo "Er is een fout opgetreden: " . $e->getMessage();
-  } finally {
-      // Sluit de databaseverbinding in een finally-blok
-      if (isset($pdo)) {
-          $pdo = null;
-      }
-  }
-
 // Functie om de specifieke logica voor zilveren, gouden producten en naam/beschikbaarheid bewerkingen uit te voeren
   function processMetalLogic($products)
   {
@@ -537,7 +468,72 @@
   {
       return implode(" & ", array_unique($availability));
   }
+
+// Databaseverbinding
+  $dbHost = 'localhost';
+  $dbUser = 'morris_jansen';
+  $dbName = 'amorie_database';
+  $dbPass = 'Wasmachine1';
+
+// Gebruik PDO voor veiligheid bij het verbinden met de database
+  $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+
+  try {
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      // Associatieve array met categorieën en bijbehorende queries
+      $categories = [
+        'alle-oorbellen' => "SELECT * FROM producten WHERE productnaam LIKE '%oorbel%'",
+        'hoops' => "SELECT * FROM producten WHERE categorie LIKE '%hoops%'",
+        'oorringen-en-hangers' => "SELECT * FROM producten WHERE categorie LIKE '%oorringen en hangers%'",
+        'oorknopjes' => "SELECT * FROM producten WHERE categorie LIKE '%oorknopjes%'",
+        'doortrek-oorbellen' => "SELECT * FROM producten WHERE categorie LIKE '%doortrek oorbellen%'",
+        'ear-cuffs' => "SELECT * FROM producten WHERE categorie LIKE '%ear cuffs%'",
+        'piercings' => "SELECT * FROM producten WHERE categorie LIKE '%piercing%'",
+        'sets' => "SELECT * FROM producten WHERE categorie LIKE '%sets%'",
+        'mix-en-match' => "SELECT * FROM producten WHERE categorie LIKE '%mix-&-match%'"
+      ];
+
+      // Bepaal de geselecteerde categorie of gebruik de standaardcategorie
+      $selectedCategory = isset($_GET['cat']) ? $_GET['cat'] : 'alle-oorbellen';
+
+      // Uitvoeren van de query voor de geselecteerde categorie
+      $query = isset($categories[$selectedCategory]) ? $categories[$selectedCategory] :
+        die("<p>Dit is een foutmelding of een standaardcategorie.</p>");
+
+      // Uitvoeren van de query
+      $stmt = $pdo->query($query);
+      $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      // Specifieke logica toepassen op de producten
+      $processedProducts = processMetalLogic($products);
+
+      // Productnamen samenvoegen op basis van beschikbaarheid
+      $mergedProducts = mergeProducts($processedProducts);
+  } catch (PDOException $e) {
+      echo "Er is een fout opgetreden: " . $e->getMessage();
+  } finally {
+      // Weergave in de HTML
+      echo "<div class='container-fluid'>";
+      echo "<div class='row justify-content-around'>";
+
+      foreach ($mergedProducts as $mergedProduct) {
+          // Jouw productweergave logica hier
+
+          // Voorbeeld: productnaam, prijs, afbeelding en beschikbaarheid weergeven
+          echo "<div class='col-md-2 product-item'>";
+          echo "<h3>" . $mergedProduct['productnaam'] . "</h3>";
+          echo "<p>Prijs: €" . $mergedProduct['prijs'] . "</p>";
+          echo "<p>Beschikbaarheid: " . getAvailability($mergedProduct['availability']) . "</p>";
+          echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-3.jpg' alt='Productafbeelding'>";
+          echo "</div>";
+      }
+
+      echo "</div>";
+      echo "</div>";
+  }
     ?>
+
 
 
 

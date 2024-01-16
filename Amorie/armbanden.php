@@ -390,14 +390,95 @@
 
 
 
-
   <?php
+// Functie om de specifieke logica voor zilveren, gouden producten en naam/beschikbaarheid bewerkingen uit te voeren
+  function processMetalLogic($products)
+  {
+      $processedProducts = [];
+
+      foreach ($products as $product) {
+          // Zorg ervoor dat de array voor beschikbaarheid altijd is gedefinieerd
+          $product['availability'] = [];
+
+          // Specifieke controle voor 'Initial Vintage oorbel'
+          if (stripos($product['productnaam'], 'Initial Vintage oorbel') !== false) {
+              // Voeg beschikbaarheid toe op basis van 'goud' en 'zilver'
+              if (stripos($product['productnaam'], 'goud') !== false) {
+                  $product['availability'][] = 'Goud';
+              }
+              if (stripos($product['productnaam'], 'zilver') !== false) {
+                  $product['availability'][] = 'Zilver';
+              }
+
+              // Voeg het verwerkte product toe aan de array
+              $processedProducts[] = $product;
+
+              // Ga door met de volgende iteratie om dubbele verwerking te voorkomen
+              continue;
+          }
+
+          // Normale verwerking voor andere producten
+          $metalOptions = ['zilver', 'goud'];
+
+          foreach ($metalOptions as $metal) {
+              // Kijk naar zowel keuze_combinatie als productnaam
+              if (isset($product['keuze_combinatie']) && stripos($product['keuze_combinatie'], $metal) !== false) {
+                  $product['availability'][] = ucfirst($metal); // Eerste letter naar hoofdletter
+              } elseif (stripos($product['productnaam'], $metal) !== false) {
+                  $product['availability'][] = ucfirst($metal); // Eerste letter naar hoofdletter
+              }
+          }
+
+          // Verwijder 'goud' en 'zilver' uit de productnaam (hoofdletterongevoelig)
+          $product['productnaam'] = preg_replace("/\b(goud|zilver)\b/i", '', $product['productnaam']);
+
+          // Voeg het verwerkte product toe aan de array
+          $processedProducts[] = $product;
+      }
+
+      return $processedProducts;
+  }
+
+// Functie om producten samen te voegen
+  function mergeProducts($products)
+  {
+      $mergedProducts = [];
+
+      foreach ($products as $product) {
+          $productNameWithoutMetal = $product['productnaam'];
+
+          // Zoek naar een product met dezelfde naam en voeg de beschikbaarheid samen
+          $mergedProductFound = false;
+          foreach ($mergedProducts as &$mergedProduct) {
+              if ($productNameWithoutMetal === $mergedProduct['productnaam']) {
+                  $mergedProduct['availability'] = array_merge($mergedProduct['availability'], $product['availability']);
+                  $mergedProductFound = true;
+                  break;
+              }
+          }
+
+          // Als er geen samengevoegd product is gevonden, voeg het huidige product toe aan de array
+          if (!$mergedProductFound) {
+              $mergedProducts[] = $product;
+          }
+      }
+
+      return $mergedProducts;
+  }
+
+// Functie om beschikbaarheid te bepalen
+  function getAvailability($availability)
+  {
+      return implode(" & ", array_unique($availability));
+  }
+
+// Databaseverbinding
   $dbHost = 'localhost';
   $dbUser = 'morris_jansen';
   $dbName = 'amorie_database';
   $dbPass = 'Wasmachine1';
 
-  // Gebruik PDO voor veiligheid bij het verbinden met de database
+// Gebruik PDO voor veiligheid bij het verbinden met de database
   try {
       $pdoConnection = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
       $pdoConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -405,17 +486,17 @@
       die("Databaseverbinding is mislukt: " . $e->getMessage());
   }
 
-  // Standaardquery voor alle enkelbandjes met prepared statement voor veiligheid
+// Standaardquery voor alle enkelbandjes met prepared statement voor veiligheid
   $preparedQuery = "SELECT * FROM producten WHERE productnaam LIKE :searchTerm";
   $statement = $pdoConnection->prepare($preparedQuery);
   $searchTerm = '%armband%';
   $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
   $statement->execute();
 
-  // Zorg ervoor dat alle resultaten op een veilige manier worden opgehaald
+// Zorg ervoor dat alle resultaten op een veilige manier worden opgehaald
   $armbandenResultaten = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-  // Logica voor het verwerken van armbanden
+// Logica voor het verwerken van armbanden
   $processedArmbanden = [];
   $mergedArmbanden = [];
 
@@ -446,7 +527,7 @@
       $processedArmbanden[] = $row;
   }
 
-  // Voorkom dubbelen door armbanden samen te voegen
+// Voorkom dubbelen door armbanden samen te voegen
   foreach ($processedArmbanden as $armband) {
       $productNameWithoutMetal = $armband['productnaam'];
 
@@ -460,11 +541,11 @@
       $mergedArmbanden[$productNameWithoutMetal] = $armband;
   }
 
-  // Toon de resultaten in HTML
+// Toon de resultaten in HTML
   echo "<div class='container-fluid'>";
   echo "<div class='row justify-content-around'>";
 
-  // Gebruik htmlspecialchars voor veiligheid
+// Gebruik htmlspecialchars voor veiligheid
   foreach ($mergedArmbanden as $mergedArmband) {
       echo "<div class='col-md-3 col-lg-2 product-item mb-4'>";
       echo "<img style='max-width: 100%; height: auto;' src='./images/preview-product-1.webp' alt='Productafbeelding'>";
@@ -487,9 +568,10 @@
   echo "</div>";
   echo "</div>";
 
-  // Sluit de databaseverbinding
+// Sluit de databaseverbinding
   $pdoConnection = null;
     ?>
+
 
 
 
